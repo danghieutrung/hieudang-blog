@@ -18,22 +18,16 @@ const GanttSong = () => {
   }, []);
 
   useEffect(() => {
-    // Function to determine the width based on window size
     const updatePlotWidth = () => {
-      if (window.innerWidth < 768) { // Adjust the breakpoint as needed
-        setPlotWidth(480);
+      if (window.innerWidth < 768) {
+        setPlotWidth(window.innerWidth - 50);
       } else {
         setPlotWidth(720);
       }
     };
 
-    // Set initial width
     updatePlotWidth();
-
-    // Add event listener for resize
     window.addEventListener("resize", updatePlotWidth);
-    
-    // Cleanup listener on unmount
     return () => {
       window.removeEventListener("resize", updatePlotWidth);
     };
@@ -79,7 +73,7 @@ const GanttSong = () => {
           b: 50,
         },
         height: 360,
-        width: plotWidth, // Use the dynamic width here
+        width: plotWidth,
         paper_bgcolor: "#181e39",
         plot_bgcolor: "#181e39",
         hovermode: "closest",

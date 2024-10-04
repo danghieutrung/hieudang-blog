@@ -20,27 +20,20 @@ const DivergingBar = () => {
   const [showLegendBox, setShowLegendBox] = useState(true);
 
   useEffect(() => {
-    // Function to determine the width based on window size
     const updatePlotWidth = () => {
       if (window.innerWidth < 768) {
-        // Adjust the breakpoint as needed
         setPlotWidth(500);
         setShowOutsideText(false);
         setShowLegendBox(false);
       } else {
-        setPlotWidth(720);
+        setPlotWidth(window.innerWidth - 50);
         setShowOutsideText(true);
         setShowLegendBox(true);
       }
     };
 
-    // Set initial width
     updatePlotWidth();
-
-    // Add event listener for resize
     window.addEventListener("resize", updatePlotWidth);
-
-    // Cleanup listener on unmount
     return () => {
       window.removeEventListener("resize", updatePlotWidth);
     };
@@ -62,7 +55,7 @@ const DivergingBar = () => {
 
     const bar_width = 0.7;
     const bar_border = {
-      color: "white", // Set border color to white
+      color: "white",
       width: 2,
     };
 
@@ -82,6 +75,7 @@ const DivergingBar = () => {
       type: "bar",
       text: wl_categories,
       textposition: "inside",
+      insidetextanchor: "start",
       orientation: "h",
       hovertemplate: westlifeHovertemplate,
       width: bar_width,
@@ -98,6 +92,7 @@ const DivergingBar = () => {
       type: "bar",
       text: bsb_categories,
       textposition: "inside",
+      insidetextanchor: "start",
       orientation: "h",
       hovertemplate: bsbHovertemplate,
       width: bar_width,
@@ -114,6 +109,7 @@ const DivergingBar = () => {
       type: "bar",
       text: wl_duration,
       textposition: "outside",
+      insidetextanchor: "start",
       textfont: {
         color: "white",
       },
@@ -133,6 +129,7 @@ const DivergingBar = () => {
       type: "bar",
       text: bsb_duration,
       textposition: "outside",
+      insidetextanchor: "start",
       textfont: {
         color: "white",
       },
@@ -157,9 +154,9 @@ const DivergingBar = () => {
       visible: false,
       range: [-105, 80],
       title: {
-        font: { color: "white" }, // X-axis title color
+        font: { color: "white" },
       },
-      tickfont: { color: "white" }, // X-axis tick color
+      tickfont: { color: "white" },
     },
     yaxis: {
       visible: false,
@@ -170,10 +167,10 @@ const DivergingBar = () => {
       y: 1.15,
       xanchor: "right",
       yanchor: "top",
-      bgcolor: "rgba(0, 0, 0, 0.5)", // Adjust legend background if needed
-      bordercolor: "white", // Legend border color
+      bgcolor: "rgba(0, 0, 0, 0.5)",
+      bordercolor: "white",
       borderwidth: 1,
-      font: { color: "white" }, // Legend text color
+      font: { color: "white" },
     },
     height: 300,
     width: plotWidth,
@@ -184,8 +181,8 @@ const DivergingBar = () => {
       t: 0,
     },
     bargroupgap: 0.01,
-    paper_bgcolor: "#181e39", // Background color of the entire plot
-    plot_bgcolor: "#181e39", // Background color of the plotting area
+    paper_bgcolor: "#181e39",
+    plot_bgcolor: "#181e39",
   };
 
   const config = { responsive: true };

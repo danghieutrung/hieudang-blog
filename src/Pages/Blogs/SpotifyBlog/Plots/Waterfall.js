@@ -15,26 +15,23 @@ const Waterfall = () => {
     });
   }, []);
 
-  const [plotWidth, setPlotWidth] = useState(720);
   const [plotHeight, setPlotHeight] = useState(400);
+  const [plotWidth, setPlotWidth] = useState(720);
   useEffect(() => {
     const updatePlotDimension = () => {
       if (window.innerWidth < 768) {
-        setPlotWidth(500);
-        setPlotHeight(250);
+        var w = window.innerWidth - 50;
+        var h = parseInt(w * 0.55);
+        setPlotHeight(h);
+        setPlotWidth(w);
       } else {
-        setPlotWidth(720);
         setPlotHeight(400);
+        setPlotWidth(720);
       }
     };
 
-    // Set initial width
     updatePlotDimension();
-
-    // Add event listener for resize
     window.addEventListener("resize", updatePlotDimension);
-
-    // Cleanup listener on unmount
     return () => {
       window.removeEventListener("resize", updatePlotDimension);
     };

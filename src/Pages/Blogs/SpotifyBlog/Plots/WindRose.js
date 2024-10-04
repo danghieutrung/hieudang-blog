@@ -14,15 +14,15 @@ const WindRose = () => {
       },
     });
   }, []);
-  
-  const [plotHeight, setPlotHeight] = useState(480);
+
+  const [plotHeight, setPlotHeight] = useState(720);
   const [plotWidth, setPlotWidth] = useState(720);
   const [showLegend, setShowLegend] = useState(true);
   useEffect(() => {
     const updatePlotDimension = () => {
       if (window.innerWidth < 768) {
-        setPlotHeight(400);
-        setPlotWidth(600);
+        setPlotHeight(parseInt(window.innerWidth * 0.75));
+        setPlotWidth(parseInt(window.innerWidth * 0.75));
         setShowLegend(false);
       } else {
         setPlotHeight(480);
@@ -31,13 +31,8 @@ const WindRose = () => {
       }
     };
 
-    // Set initial width
     updatePlotDimension();
-
-    // Add event listener for resize
     window.addEventListener("resize", updatePlotDimension);
-
-    // Cleanup listener on unmount
     return () => {
       window.removeEventListener("resize", updatePlotDimension);
     };
@@ -83,10 +78,10 @@ const WindRose = () => {
     height: plotHeight,
     width: plotWidth,
     margin: {
-      l: 70,
-      r: 0,
-      b: 50,
-      t: 50,
+      l: 20,
+      r: 20,
+      b: 75,
+      t: 75,
     },
     polar: {
       bgcolor: "black",
@@ -104,14 +99,12 @@ const WindRose = () => {
         linecolor: "white",
         ticks: "",
         ticktext: [
-          /* */
         ],
         tickfont: {
           size: 1,
         },
       },
     },
-    // polar: {},
     legend: {
       font: {
         color: "white",

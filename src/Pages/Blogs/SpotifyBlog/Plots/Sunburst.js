@@ -15,6 +15,26 @@ const Sunburst = () => {
     });
   }, []);
 
+  const [plotHeight, setPlotHeight] = useState(400);
+  const [plotWidth, setPlotWidth] = useState(720);
+  useEffect(() => {
+    const updatePlotDimension = () => {
+      if (window.innerWidth < 768) {
+        setPlotHeight(window.innerWidth - 50);
+        setPlotWidth(window.innerWidth - 50);
+      } else {
+        setPlotHeight(720);
+        setPlotWidth(720);
+      }
+    };
+
+    updatePlotDimension();
+    window.addEventListener("resize", updatePlotDimension);
+    return () => {
+      window.removeEventListener("resize", updatePlotDimension);
+    };
+  }, []);
+
   const createPlotData = (data) => {
     if (!data || data.length === 0) return [];
 
@@ -48,8 +68,8 @@ const Sunburst = () => {
 
   const layout = {
     margin: { l: 0, r: 0, b: 0, t: 0 },
-    width: 450,
-    height: 450,
+    height: plotHeight,
+    width: plotWidth,
     paper_bgcolor: "#181e39",
   };
 

@@ -4,7 +4,6 @@ import Plot from "react-plotly.js";
 
 const SankeyDiagram = () => {
   const [data, setData] = useState(null);
-
   useEffect(() => {
     fetch("/data/2_sankey_top_100.json")
       .then((response) => {
@@ -15,6 +14,23 @@ const SankeyDiagram = () => {
       })
       .then((data) => setData(data))
       .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
+  const [plotWidth, setPlotWidth] = useState(720);
+  useEffect(() => {
+    const updatePlotDimension = () => {
+      if (window.innerWidth < 768) {
+        setPlotWidth(window.innerWidth - 50);
+      } else {
+        setPlotWidth(720);
+      }
+    };
+
+    updatePlotDimension();
+    window.addEventListener("resize", updatePlotDimension);
+    return () => {
+      window.removeEventListener("resize", updatePlotDimension);
+    };
   }, []);
 
   const createPlotData = (data) => {
@@ -55,17 +71,8 @@ const SankeyDiagram = () => {
       size: 11,
       color: "white",
     },
-    // title: {
-    //   text: "Most-played 100",
-    //   font: {
-    //     color: "white",
-    //     size: 20
-    //   },
-    // },
     height: 500,
-    width: 500,
-    // minheight: 600,
-    // minwidth: 720,
+    width: plotWidth,
     margin: {
       l: 10,
       r: 10,
