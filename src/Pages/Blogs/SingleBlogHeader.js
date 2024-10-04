@@ -5,7 +5,7 @@ const SingleBlogHeader = () => {
   return (
     <header className="header" id="header">
       <nav className="nav container">
-        <a href="/blogs" className="nav__logo">
+        <a href="/blogs/" className="nav__logo">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
