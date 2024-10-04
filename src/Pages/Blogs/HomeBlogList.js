@@ -10,8 +10,6 @@ const HomeBlogList = () => {
         <article className="work__card">
           <a
             href="/blogs/spotify/"
-            target="_blank"
-            rel="noopener noreferrer"
             className="work__link"
           >
             <h2 className="work__title"><b>1</b>. 4/10/2024: Inception</h2>
