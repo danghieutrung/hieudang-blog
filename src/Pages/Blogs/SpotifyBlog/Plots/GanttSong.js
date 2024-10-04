@@ -5,8 +5,6 @@ import Papa from "papaparse";
 
 const GanttSong = () => {
   const [data, setData] = useState(null);
-  const [plotWidth, setPlotWidth] = useState(720); // Default width
-
   useEffect(() => {
     Papa.parse("/data/3_gantt_top_otm.csv", {
       download: true,
@@ -17,12 +15,16 @@ const GanttSong = () => {
     });
   }, []);
 
+  const [plotWidth, setPlotWidth] = useState(720);
+  const [firstCategory, setFirstCategory] = useState("Everything Has Changed");
   useEffect(() => {
     const updatePlotWidth = () => {
       if (window.innerWidth < 768) {
         setPlotWidth(window.innerWidth - 50);
+        setFirstCategory("EHC-Taylor Swift");
       } else {
         setPlotWidth(720);
+        setFirstCategory("Everything Has Changed");
       }
     };
 
@@ -104,7 +106,7 @@ const GanttSong = () => {
             "Nuvole Bianche",
             "Sparks Fly",
             "13 Others",
-            "Everything Has Changed",
+            firstCategory,
           ],
           tickvals: [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5],
           zeroline: false,
