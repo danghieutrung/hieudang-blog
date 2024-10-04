@@ -3,7 +3,7 @@ import React from "react";
 
 const Projects = () => {
   return (
-    <section className="work section">
+    <section className="work section" id="recent_works">
       <h2 className="section__title">RECENT WORKS</h2>
 
       <div className="work__container container grid">

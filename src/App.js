@@ -1,9 +1,8 @@
 // src/App.js
-import { Routes, Route } from 'react-router-dom';
-// import Blog from './Pages/BlogSpotify/Blog';
-import SpotifyBlog from './Pages/Blogs/SpotifyBlog/SpotifyBlog';
+import { Routes, Route } from "react-router-dom";
+import SpotifyBlog from "./Pages/Blogs/SpotifyBlog/SpotifyBlog";
 import Home from "./Pages/Home";
-import HomeBlog from './Pages/HomeBlog';
+import HomeBlog from "./Pages/HomeBlog";
 import ErrorPage from "./Pages/ErrorPage";
 
 const App = () => {

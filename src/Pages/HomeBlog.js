@@ -6,22 +6,23 @@ import HomeBlogFooter from "./Blogs/HomeBlogFooter";
 import HomeBlogHeader from "./Blogs/HomeBlogHeader";
 import HomeBlogList from "./Blogs/HomeBlogList";
 import HomeSection from "../Components/HomeSection";
+import ScrollUpButton from "../Components/ScrollUpButton";
 
 function HomeBlog() {
   return (
     <div>
-      <head>
-        <Head />
-      </head>
-      <body>
-        <HomeBlogHeader />
-        <main className="main">
-        <HomeSection imgUrl={"/img/ava/me_gooner.jpg"} profession={"Data Servant"}/>
-          <HomeBlogList />
-          <ContactMe />
-        </main>
-        <HomeBlogFooter />
-      </body>
+      <Head />
+      <HomeBlogHeader />
+      <main className="main">
+        <HomeSection
+          imgUrl={"/img/ava/me_gooner.jpg"}
+          profession={"Data Analyst"}
+        />
+        <HomeBlogList />
+        <ContactMe />
+      </main>
+      <HomeBlogFooter />
+      <ScrollUpButton />
     </div>
   );
 }

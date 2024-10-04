@@ -1,10 +1,12 @@
 // src/Pages/Blogs/SpotifyBlog/SpotifyBlog.js
 import React from "react";
-import SingleBlogFooter from "../SingleBlogFooter.js";
-import SingleBlogHeader from "../SingleBlogHeader.js";
+
 import ContactMe from "../../../Components/ContactMe.js";
 import HomeSection from "../../../Components/HomeSection.js";
 import Head from "../../../Components/Head.js";
+import ScrollUpButton from "../../../Components/ScrollUpButton.js";
+import SingleBlogFooter from "../SingleBlogFooter.js";
+import SingleBlogHeader from "../SingleBlogHeader.js";
 
 import BarChartRaceArtists from "./Plots/BarChartRaceArtists.js";
 import BarChartRaceSongs from "./Plots/BarChartRaceSongs.js";
@@ -27,7 +29,10 @@ function SpotifyBlog() {
       <Head />
       <SingleBlogHeader />
       <main className="main">
-        <HomeSection imgUrl={"/img/ava/me_little.jpg"} profession={"Inception"}/>
+        <HomeSection
+          imgUrl={"/img/ava/me_little.jpg"}
+          profession={"Inception"}
+        />
         <h1 className="blog-title">
           Chasing Melodies: 163,000 Spotify Minutes in 10 Charts
         </h1>
@@ -317,6 +322,7 @@ function SpotifyBlog() {
         <ContactMe />
       </main>
       <SingleBlogFooter />
+      <ScrollUpButton />
     </div>
   );
 }

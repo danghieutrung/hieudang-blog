@@ -9,25 +9,26 @@ import MyInfo from "../Components/MyInfo";
 import CurrentProjects from "../Components/CurrentProjects";
 import Projects from "../Components/Projects";
 import Services from "../Components/Services";
+import ScrollUpButton from "../Components/ScrollUpButton";
 
 function Home() {
   return (
     <div>
-      <head>
-        <Head />
-      </head>
-      <body>
-        <Header />
-        <main className="main">
-          <HomeSection imgUrl={"/img/ava/me_nba.jpg"} profession={"Data Servant"}/>
-          <MyInfo />
-          <CurrentProjects />
-          <Projects />
-          <Services />
-          <ContactMe />
-        </main>
-        <Footer />
-      </body>
+      <Head />
+      <Header />
+      <main className="main">
+        <HomeSection
+          imgUrl={"/img/ava/me_nba.jpg"}
+          profession={"Data Analyst"}
+        />
+        <MyInfo />
+        <CurrentProjects />
+        <Projects />
+        <Services />
+        <ContactMe />
+      </main>
+      <Footer />
+      <ScrollUpButton />
     </div>
   );
 }
