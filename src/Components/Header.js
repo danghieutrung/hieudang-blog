@@ -1,7 +1,7 @@
 // src/Components/Header.js
 import React, { useEffect, useRef, useState } from "react";
 
-const NewHeader = () => {
+const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const sectionsRef = useRef([]);
 
@@ -108,13 +108,11 @@ const NewHeader = () => {
             </li>
           </ul>
 
-          {/* Close button */}
           <div className="nav__close" onClick={closeMenu}>
             <i className="ri-close-large-line"></i>
           </div>
         </div>
 
-        {/* Toggle button */}
         <div className="nav__toggle" onClick={toggleMenu}>
           <i className="ri-menu-line"></i>
         </div>
@@ -123,4 +121,4 @@ const NewHeader = () => {
   );
 };
 
-export default NewHeader;
+export default Header;
