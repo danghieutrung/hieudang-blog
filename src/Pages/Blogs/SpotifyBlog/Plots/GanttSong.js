@@ -5,6 +5,8 @@ import Papa from "papaparse";
 
 const GanttSong = () => {
   const [data, setData] = useState(null);
+  const [plotWidth, setPlotWidth] = useState(720); // Default width
+
   useEffect(() => {
     Papa.parse("/data/3_gantt_top_otm.csv", {
       download: true,
@@ -13,6 +15,28 @@ const GanttSong = () => {
         setData(results.data);
       },
     });
+  }, []);
+
+  useEffect(() => {
+    // Function to determine the width based on window size
+    const updatePlotWidth = () => {
+      if (window.innerWidth < 768) { // Adjust the breakpoint as needed
+        setPlotWidth(480);
+      } else {
+        setPlotWidth(720);
+      }
+    };
+
+    // Set initial width
+    updatePlotWidth();
+
+    // Add event listener for resize
+    window.addEventListener("resize", updatePlotWidth);
+    
+    // Cleanup listener on unmount
+    return () => {
+      window.removeEventListener("resize", updatePlotWidth);
+    };
   }, []);
 
   const createPlotData = (data) => {
@@ -55,7 +79,7 @@ const GanttSong = () => {
           b: 50,
         },
         height: 360,
-        width: 720,
+        width: plotWidth, // Use the dynamic width here
         paper_bgcolor: "#181e39",
         plot_bgcolor: "#181e39",
         hovermode: "closest",

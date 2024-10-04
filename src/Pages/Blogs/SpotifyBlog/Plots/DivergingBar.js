@@ -15,6 +15,37 @@ const DivergingBar = () => {
     });
   }, []);
 
+  const [plotWidth, setPlotWidth] = useState(720);
+  const [showOutsideText, setShowOutsideText] = useState(true);
+  const [showLegendBox, setShowLegendBox] = useState(true);
+
+  useEffect(() => {
+    // Function to determine the width based on window size
+    const updatePlotWidth = () => {
+      if (window.innerWidth < 768) {
+        // Adjust the breakpoint as needed
+        setPlotWidth(500);
+        setShowOutsideText(false);
+        setShowLegendBox(false);
+      } else {
+        setPlotWidth(720);
+        setShowOutsideText(true);
+        setShowLegendBox(true);
+      }
+    };
+
+    // Set initial width
+    updatePlotWidth();
+
+    // Add event listener for resize
+    window.addEventListener("resize", updatePlotWidth);
+
+    // Cleanup listener on unmount
+    return () => {
+      window.removeEventListener("resize", updatePlotWidth);
+    };
+  }, []);
+
   const createPlotData = (data) => {
     if (!data || data.length === 0) return [];
 
@@ -114,14 +145,13 @@ const DivergingBar = () => {
       },
     };
 
-    return [traceWestlifeOutside, traceBsBOutside, traceWestlife, traceBsB];
+    const plotData = showOutsideText
+      ? [traceWestlifeOutside, traceBsBOutside, traceWestlife, traceBsB]
+      : [traceWestlife, traceBsB];
+    return plotData;
   };
 
   const layout = {
-    title: {
-      text: "Westlife vs Backstreet Boys",
-      font: { color: "white" }, // Title text color
-    },
     barmode: "overlay",
     xaxis: {
       visible: false,
@@ -134,7 +164,7 @@ const DivergingBar = () => {
     yaxis: {
       visible: false,
     },
-    showlegend: true,
+    showlegend: showLegendBox,
     legend: {
       x: 1.15,
       y: 1.15,
@@ -146,7 +176,7 @@ const DivergingBar = () => {
       font: { color: "white" }, // Legend text color
     },
     height: 300,
-    width: 720,
+    width: plotWidth,
     margin: {
       l: 0,
       r: 0,
@@ -155,7 +185,7 @@ const DivergingBar = () => {
     },
     bargroupgap: 0.01,
     paper_bgcolor: "#181e39", // Background color of the entire plot
-    plot_bgcolor: "#181e39",  // Background color of the plotting area
+    plot_bgcolor: "#181e39", // Background color of the plotting area
   };
 
   const config = { responsive: true };

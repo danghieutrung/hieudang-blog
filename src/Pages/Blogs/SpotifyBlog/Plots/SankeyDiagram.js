@@ -62,8 +62,10 @@ const SankeyDiagram = () => {
     //     size: 20
     //   },
     // },
-    height: 600,
-    width: 720,
+    height: 500,
+    width: 500,
+    // minheight: 600,
+    // minwidth: 720,
     margin: {
       l: 10,
       r: 10,

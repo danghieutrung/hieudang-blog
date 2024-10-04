@@ -5,7 +5,6 @@ import Papa from "papaparse";
 
 const WindRose = () => {
   const [data, setData] = useState(null);
-
   useEffect(() => {
     Papa.parse("/data/9_wind_rose_replayer_js.csv", {
       download: true,
@@ -14,6 +13,34 @@ const WindRose = () => {
         setData(results.data);
       },
     });
+  }, []);
+  
+  const [plotHeight, setPlotHeight] = useState(480);
+  const [plotWidth, setPlotWidth] = useState(720);
+  const [showLegend, setShowLegend] = useState(true);
+  useEffect(() => {
+    const updatePlotDimension = () => {
+      if (window.innerWidth < 768) {
+        setPlotHeight(400);
+        setPlotWidth(600);
+        setShowLegend(false);
+      } else {
+        setPlotHeight(480);
+        setPlotWidth(720);
+        setShowLegend(true);
+      }
+    };
+
+    // Set initial width
+    updatePlotDimension();
+
+    // Add event listener for resize
+    window.addEventListener("resize", updatePlotDimension);
+
+    // Cleanup listener on unmount
+    return () => {
+      window.removeEventListener("resize", updatePlotDimension);
+    };
   }, []);
 
   const createPlotData = (data) => {
@@ -53,8 +80,8 @@ const WindRose = () => {
     color: "white",
     paper_bgcolor: "#181e39",
     plot_bgcolor: "#181e39",
-    height: 480,
-    width: 720,
+    height: plotHeight,
+    width: plotWidth,
     margin: {
       l: 70,
       r: 0,
@@ -84,12 +111,14 @@ const WindRose = () => {
         },
       },
     },
+    // polar: {},
     legend: {
       font: {
         color: "white",
       },
       bgcolor: "#181e39",
     },
+    showlegend: showLegend,
   };
 
   const config = { responsive: true };

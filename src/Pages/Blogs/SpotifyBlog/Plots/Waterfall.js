@@ -15,6 +15,31 @@ const Waterfall = () => {
     });
   }, []);
 
+  const [plotWidth, setPlotWidth] = useState(720);
+  const [plotHeight, setPlotHeight] = useState(400);
+  useEffect(() => {
+    const updatePlotDimension = () => {
+      if (window.innerWidth < 768) {
+        setPlotWidth(500);
+        setPlotHeight(250);
+      } else {
+        setPlotWidth(720);
+        setPlotHeight(400);
+      }
+    };
+
+    // Set initial width
+    updatePlotDimension();
+
+    // Add event listener for resize
+    window.addEventListener("resize", updatePlotDimension);
+
+    // Cleanup listener on unmount
+    return () => {
+      window.removeEventListener("resize", updatePlotDimension);
+    };
+  }, []);
+
   const createPlotData = (data) => {
     if (!data || data.length === 0) return [];
 
@@ -32,15 +57,13 @@ const Waterfall = () => {
         text_position: "inside",
         decreasing: { marker: { color: "#FF7F7F" } },
         increasing: { marker: { color: "#A0E5D9" } },
-        // hovertemplate:
-        //   "<b>%{x}</b><br>" + "%{y} minutes<br>" + "<extra></extra>",
       },
     ];
   };
 
   const layout = {
-    height: 400,
-    width: 720,
+    height: plotHeight,
+    width: plotWidth,
     xaxis: {
       title: "",
       color: "white",

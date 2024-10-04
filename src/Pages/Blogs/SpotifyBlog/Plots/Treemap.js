@@ -1,10 +1,10 @@
-// src/Pages/Blogs/SpotifyBlog/Plots/Treemap.js
 import React, { useState, useEffect } from "react";
 import Plot from "react-plotly.js";
 import Papa from "papaparse";
 
 const Treemap = () => {
   const [data, setData] = useState(null);
+
   useEffect(() => {
     Papa.parse("/data/7_disney_treemap.csv", {
       download: true,
@@ -15,6 +15,29 @@ const Treemap = () => {
     });
   }, []);
 
+  const [plotWidth, setPlotWidth] = useState(720);
+  const [plotHeight, setPlotHeight] = useState(300);
+
+  useEffect(() => {
+    const updatePlotDimension = () => {
+      if (window.innerWidth < 768) {
+        setPlotWidth(300);
+        setPlotHeight(720)
+      } else {
+        setPlotWidth(720);
+        setPlotHeight(300);
+      }
+    };
+
+    updatePlotDimension();
+
+    window.addEventListener("resize", updatePlotDimension);
+
+    return () => {
+      window.removeEventListener("resize", updatePlotDimension);
+    };
+  }, []);
+
   const createPlotData = (data) => {
     if (!data || data.length === 0) return [];
 
@@ -23,7 +46,7 @@ const Treemap = () => {
     const values = data.map((row) => row.duration);
     const hovertemplate = data.map(
       (row) =>
-        `${row.song}<br><b>Duration</b>: ${row.duration} minutes<extra></extra>` // Custom hover text
+        `${row.song}<br><b>Duration</b>: ${row.duration} minutes<extra></extra>`
     );
 
     return [
@@ -35,20 +58,20 @@ const Treemap = () => {
         values: values,
         textfont: {
           size: 18,
-          color: "white"
+          color: "white",
         },
         textposition: "middle center",
         insidetextfont: {
           variant: "small-caps",
         },
-        hovertemplate: hovertemplate
+        hovertemplate: hovertemplate,
       },
     ];
   };
 
   const layout = {
-    height: 300,
-    width: 720,
+    height: plotHeight,
+    width: plotWidth,
     margin: {
       l: 0,
       r: 0,
@@ -56,7 +79,7 @@ const Treemap = () => {
       t: 0,
     },
     paper_bgcolor: "#181e39",
-  }
+  };
 
   const config = { responsive: true };
 
