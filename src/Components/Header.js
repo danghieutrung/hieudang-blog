@@ -1,7 +1,16 @@
-// src/Components/Header.js
-import React from "react";
+import React, { useState } from "react";
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="header" id="header">
       <nav className="nav container">
@@ -9,62 +18,48 @@ const Header = () => {
           Hieu
         </a>
 
-        <div className="nav__menu" id="nav-menu">
+        <div className={`nav__menu ${isMenuOpen ? "show-menu" : ""}`} id="nav-menu">
           <ul className="nav__list">
             <li>
-              <a href="#home" className="nav__link active-link">
+              <a href="#home" className="nav__link" onClick={closeMenu}>
                 Home
               </a>
             </li>
             <li>
-              <a href="#info" className="nav__link">
+              <a href="#info" className="nav__link" onClick={closeMenu}>
                 My Info
               </a>
             </li>
             <li>
-              <a href="#projects" className="nav__link">
+              <a href="#projects" className="nav__link" onClick={closeMenu}>
                 Projects
               </a>
             </li>
             <li>
-              <a href="#services" className="nav__link">
+              <a href="#services" className="nav__link" onClick={closeMenu}>
                 Services
               </a>
             </li>
             <li>
-              <a href="#contact" className="nav__link">
+              <a href="#contact" className="nav__link" onClick={closeMenu}>
                 Contact Me
               </a>
             </li>
             <li>
-              <a href="/blogs/" className="nav__link">
+              <a href="/blogs/" className="nav__link" onClick={closeMenu}>
                 My Blog
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  className="bi bi-arrow-right"
-                  viewBox="0 0 16 16"
-                  style={{ marginLeft: "4px", verticalAlign: "middle" }} // Adjust spacing and alignment
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M11.3 8l-4.5-4.5a.5.5 0 0 1 .7-.7l5.5 5.5a.5.5 0 0 1 0 .7l-5.5 5.5a.5.5 0 0 1-.7-.7L11.3 8z"
-                  />
-                </svg>
               </a>
             </li>
           </ul>
 
           {/* Close button */}
-          <div className="nav__close" id="nav-close">
+          <div className="nav__close" onClick={closeMenu}>
             <i className="ri-close-large-line"></i>
           </div>
         </div>
 
         {/* Toggle button */}
-        <div className="nav__toggle" id="nav-toggle">
+        <div className="nav__toggle" onClick={toggleMenu}>
           <i className="ri-menu-line"></i>
         </div>
       </nav>
