@@ -55,7 +55,7 @@ const NewHeader = () => {
     <header className="header" id="header">
       <nav className="nav container">
         <a href="#home" className="nav__logo" onClick={closeMenu}>
-          Anna
+          Hieu
         </a>
 
         <div
