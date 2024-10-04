@@ -37,6 +37,7 @@ const SingleBlogHeader = () => {
   useEffect(() => {
     sectionsRef.current = [
       document.getElementById("home"),
+      document.getElementById("spotify-blog"),
       document.getElementById("contact"),
     ];
 
@@ -75,6 +76,11 @@ const SingleBlogHeader = () => {
             <li>
               <a href="#home" className="nav__link active-link">
                 Home
+              </a>
+            </li>
+            <li>
+              <a href="#spotify-blog" className="nav__link">
+                Blog
               </a>
             </li>
             <li>

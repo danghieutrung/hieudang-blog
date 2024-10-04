@@ -33,6 +33,7 @@ function SpotifyBlog() {
           imgUrl={"/img/ava/me_little.jpg"}
           profession={"Inception"}
         />
+        <div id="spotify-blog">
         <h1 className="blog-title">
           Chasing Melodies: 163,000 Spotify Minutes in 10 Charts
         </h1>
@@ -319,6 +320,7 @@ function SpotifyBlog() {
           </a>
           , who inspired me to start this small project!
         </p>
+        </div>
         <ContactMe />
       </main>
       <SingleBlogFooter />
