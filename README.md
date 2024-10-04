@@ -5,7 +5,7 @@ Contact me at [hieudangtrung@protonmail.com](mailto:hieudangtrung@protonmail.com
 ## Installing
 `yarn install`
 
-`yarn start`: Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+`yarn start`: Open [http://localhost:3000](http://localhost:3000) to view on your browser
 
 ## Details
 - Web Application built with `React`
