@@ -15,7 +15,7 @@ function HomeBlog() {
       <HomeBlogHeader />
       <main className="main">
         <HomeSection
-          imgUrl={"/img/ava/me_gooner.jpg"}
+          imgUrl={"/img/ava/me_lkc.jpg"}
           profession={"Data Analyst"}
         />
         <HomeBlogList />
