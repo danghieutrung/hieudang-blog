@@ -27,7 +27,7 @@ function SpotifyBlog() {
       <Head />
       <SingleBlogHeader />
       <main className="main">
-        <HomeSection imgUrl={"/img/ava/me_little.jpg"} />
+        <HomeSection imgUrl={"/img/ava/me_little.jpg"} profession={"Inception"}/>
         <h1 className="blog-title">
           Chasing Melodies: 163,000 Spotify Minutes in 10 Charts
         </h1>

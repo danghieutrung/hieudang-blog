@@ -19,7 +19,7 @@ function Home() {
       <body>
         <Header />
         <main className="main">
-          <HomeSection imgUrl={"/img/ava/me_nba.jpg"} />
+          <HomeSection imgUrl={"/img/ava/me_nba.jpg"} profession={"Data Servant"}/>
           <MyInfo />
           <CurrentProjects />
           <Projects />

@@ -1,7 +1,7 @@
 // src/Components/HomeSection.js
 import React from "react";
 
-const HomeSection = ({imgUrl}) => {
+const HomeSection = ({imgUrl, profession}) => {
   return (
     <section className="home section" id="home">
       <div className="home__container container grid">
@@ -12,7 +12,7 @@ const HomeSection = ({imgUrl}) => {
             <br />
             Trung Hieu
           </h1>
-          <h3 className="home__profession">Data Lover:)</h3>
+          <h3 className="home__profession">{profession}</h3>
         </div>
       </div>
     </section>

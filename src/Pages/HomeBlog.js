@@ -16,7 +16,7 @@ function HomeBlog() {
       <body>
         <HomeBlogHeader />
         <main className="main">
-        <HomeSection imgUrl={"/img/ava/me_gooner.jpg"} />
+        <HomeSection imgUrl={"/img/ava/me_gooner.jpg"} profession={"Data Servant"}/>
           <HomeBlogList />
           <ContactMe />
         </main>
