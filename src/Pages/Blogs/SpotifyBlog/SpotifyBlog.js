@@ -27,9 +27,9 @@ function SpotifyBlog() {
       <Head />
       <SingleBlogHeader />
       <main className="main">
-      <HomeSection imgUrl={"/img/ava/me_little.jpg"} />
+        <HomeSection imgUrl={"/img/ava/me_little.jpg"} />
         <h1 className="blog-title">
-        Chasing Melodies: 163,000 Spotify Minutes in 10 Charts
+          Chasing Melodies: 163,000 Spotify Minutes in 10 Charts
         </h1>
         <h2 className="plot-heading">
           1. Bar Chart Race: All-time Most-played Songs and Artists
@@ -57,7 +57,9 @@ function SpotifyBlog() {
             style={{ height: "300px", width: "230px" }}
           />
         </div>
-        <p className="img-description">https://in.pinterest.com/pin/542472717591871380/</p>
+        <p className="img-description">
+          https://in.pinterest.com/pin/542472717591871380/
+        </p>
         <h3 className="plot-text">Classical</h3>
         <p className="plot-text">
           <b>Piano and Concerto: </b>I was only into piano and classical music
@@ -100,7 +102,9 @@ function SpotifyBlog() {
             className="plot"
           />
         </div>
-        <p className="img-description">https://www.youtube.com/watch?v=4VR-6AS0-l4</p>
+        <p className="img-description">
+          https://www.youtube.com/watch?v=4VR-6AS0-l4
+        </p>
         <p className="plot-text">
           <b>3. The Prestige: </b>The main theme soared, and in that moment, I
           just knew Nuvole Bianche was the greatest musical pieces I ever
@@ -291,14 +295,22 @@ function SpotifyBlog() {
             rel="noopener noreferrer"
           >
             Minh Duc
-          </a>{" "}
-          and{" "}
+          </a>
+          ,{" "}
           <a
             href="https://www.linkedin.com/in/ducanhdo183/"
             target="_blank"
             rel="noopener noreferrer"
           >
             Duc Anh
+          </a>
+          , and{" "}
+          <a
+            href="https://www.linkedin.com/in/van-thang-nguyen-0271912a6/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Thang
           </a>
           , who inspired me to start this small project!
         </p>
