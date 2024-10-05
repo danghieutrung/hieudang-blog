@@ -11,7 +11,7 @@ const GanttArtist = () => {
     // Function to determine the width based on window size
     const updatePlotWidth = () => {
       if (window.innerWidth < 768) { // Adjust the breakpoint as needed
-        setPlotWidth(window.innerWidth - 50);
+        setPlotWidth(window.innerWidth - 20);
       } else {
         setPlotWidth(720);
       }

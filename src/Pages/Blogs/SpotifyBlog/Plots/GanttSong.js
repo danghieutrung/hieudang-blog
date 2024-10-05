@@ -20,7 +20,7 @@ const GanttSong = () => {
   useEffect(() => {
     const updatePlotWidth = () => {
       if (window.innerWidth < 768) {
-        setPlotWidth(window.innerWidth - 50);
+        setPlotWidth(window.innerWidth - 20);
         setFirstCategory("EHC-Taylor Swift");
       } else {
         setPlotWidth(720);
