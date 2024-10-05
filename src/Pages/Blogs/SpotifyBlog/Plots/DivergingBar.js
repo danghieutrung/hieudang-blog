@@ -22,11 +22,11 @@ const DivergingBar = () => {
   useEffect(() => {
     const updatePlotWidth = () => {
       if (window.innerWidth < 768) {
-        setPlotWidth(500);
+        setPlotWidth(window.innerWidth - 50);
         setShowOutsideText(false);
         setShowLegendBox(false);
       } else {
-        setPlotWidth(window.innerWidth - 50);
+        setPlotWidth(720);
         setShowOutsideText(true);
         setShowLegendBox(true);
       }
