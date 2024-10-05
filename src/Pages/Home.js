@@ -6,7 +6,7 @@ import Header from "../Components/Header";
 import HomeSection from "../Components/HomeSection";
 import Footer from "../Components/Footer";
 import MyInfo from "../Components/MyInfo";
-import CurrentProjects from "../Components/CurrentProjects";
+import OngoingProjects from "../Components/OngoingProjects";
 import Projects from "../Components/Projects";
 import Services from "../Components/Services";
 import ScrollUpButton from "../Components/ScrollUpButton";
@@ -22,7 +22,7 @@ function Home() {
           profession={"Data Analyst"}
         />
         <MyInfo />
-        <CurrentProjects />
+        <OngoingProjects />
         <Projects />
         <Services />
         <ContactMe />

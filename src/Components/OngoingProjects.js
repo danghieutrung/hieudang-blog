@@ -1,13 +1,13 @@
-// src/Components/CurrentProjects.js
+// src/Components/OngoingProjects.js
 import React from "react";
 
-const CurrentProjects = () => {
+const OngoingProjects = () => {
   const handleClick = (event) => {
     event.preventDefault();
   };
 
   return (
-    <section className="work section" id="projects">
+    <section className="work section" id="ongoing_projects">
       <h2 className="section__title">ONGOING PROJECTS</h2>
 
       <div className="work__container container grid">
@@ -37,4 +37,4 @@ const CurrentProjects = () => {
   );
 };
 
-export default CurrentProjects;
+export default OngoingProjects;
