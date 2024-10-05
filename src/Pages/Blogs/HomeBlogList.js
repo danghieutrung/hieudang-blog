@@ -12,7 +12,7 @@ const HomeBlogList = () => {
             href="/blogs/spotify/"
             className="work__link"
           >
-            <h2 className="work__title"><b>1</b>. 4/10/2024: Inception</h2>
+            <h2 className="work__title"><b>1</b>. 5/10/2024: Inception</h2>
             <p className="work__description">
             Chasing Melodies: 163,000 Spotify Minutes in 10 Charts
             </p>

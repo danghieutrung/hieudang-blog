@@ -31,7 +31,7 @@ function SpotifyBlog() {
       <main className="main">
         <HomeSection
           imgUrl={"/img/ava/me_little.jpg"}
-          profession={"Inception"}
+          profession={"5/10/2024"}
         />
         <div id="spotify-blog">
           <h1 className="blog-title">
