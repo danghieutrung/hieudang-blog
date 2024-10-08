@@ -253,7 +253,7 @@ function SpotifyBlog() {
             and also <b>Toy Story</b> and <b>Finding Nemo</b>.
           </p>
           <h2 className="plot-heading">
-            8. Waterfall Chart: My Listening Activity
+            8. Waterfall Chart: My Monthly Listening Activity
           </h2>
           <Waterfall />
           <p className="plot-text">
