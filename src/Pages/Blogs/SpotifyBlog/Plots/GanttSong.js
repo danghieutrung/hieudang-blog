@@ -82,7 +82,7 @@ const GanttSong = () => {
         shapes: shapes,
         showlegend: true,
         title: {
-          text: "Song of The Month",
+          text: "Most-played Song of The Month",
           font: { color: "white" },
         },
         xaxis: {
