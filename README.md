@@ -1,6 +1,6 @@
 # My Personal Portfolio
 
-Visit my Website at: [https://dangtrunghieu.vercel.app/blogs/](https://dangtrunghieu.vercel.app/blogs/)
+Visit my Website at: [https://dangtrunghieu.vercel.app/](https://dangtrunghieu.vercel.app/)
 
 Contact me at [hieudangtrung@protonmail.com](mailto:hieudangtrung@protonmail.com)
 
