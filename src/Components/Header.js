@@ -22,7 +22,7 @@ const Header = () => {
       const sectionId = section.getAttribute("id");
 
       const sectionsClass =
-        sectionId === "recent_works" || sectionId === "ongoing_projects"
+        sectionId === "ongoing_projects"
           ? document.querySelector(`.nav__menu a[href="#projects"]`)
           : document.querySelector(`.nav__menu a[href="#${sectionId}"]`);
 
@@ -39,9 +39,9 @@ const Header = () => {
       document.getElementById("home"),
       document.getElementById("info"),
       document.getElementById("ongoing_projects"),
+      document.getElementById("projects"),
       document.getElementById("services"),
       document.getElementById("contact"),
-      document.getElementById("recent_works"),
     ];
 
     window.addEventListener("scroll", scrollActive);
