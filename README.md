@@ -1,4 +1,4 @@
-# My Personal Blog
+# My Personal Portfolio
 
 Visit my Website at: [https://dangtrunghieu.vercel.app/blogs/](https://dangtrunghieu.vercel.app/blogs/)
 
