@@ -43,16 +43,17 @@ function SpotifyBlog() {
           <BarChartRaceSongs />
           <h3 className="plot-text">The Queen</h3>
           <p className="plot-text">
-            <b>Taylor Swift: </b>Growing up was listening to Taylor Swift songs
-            in my dad's car. <i>Life was easy&nbsp;</i> when I was living{" "}
-            <i>The best day</i>. They played{" "}
-            <b>We Are Never Ever Getting Back Together</b> on MTV when I was 9,{" "}
-            <i>and that was the moment I knew</i>, that{" "}
-            <i>for the first time</i>,<i> I was enchanted to meet&nbsp;</i> my
-            gorgeous queen. And <i>everything has changed</i>. Who is Taylor
-            Swift? For the blind, she is the vision. For the hungry, she is the
-            chef. For the thirsty, she is the water. If Taylor thinks, I agree.
-            If Taylor speaks, I’m listening. If Taylor has one fan, it is me. If
+            <b>Taylor Swift: </b>Growing up, I spent countless hours listening
+            to Taylor Swift in my dad's car. I remember when{" "}
+            <b>We Are Never Ever Getting Back Together </b>played on MTV when I
+            was 9, <i>and that was the moment I knew,</i>{" "}
+            <i>I was enchanted to meet </i>my gorgeous queen. And from that
+            point on, <i>everything has changed</i>.
+          </p>
+          <p className="plot-text">
+            For the blind, she is the vision. For the hungry, she is the chef.
+            For the thirsty, she is the water. If Taylor thinks, I agree. If
+            Taylor speaks, I’m listening. If Taylor has one fan, it is me. If
             Taylor has no fans, I don’t exist.
           </p>
           <div className="plot">
@@ -68,38 +69,40 @@ function SpotifyBlog() {
           </p>
           <h3 className="plot-text">Classical</h3>
           <p className="plot-text">
-            <b>Piano and Concerto: </b>I was only into piano and classical music
-            late in high school. I came across a YouTube video a pianist named
-            Rousseau playing Moonlight Sonata 3rd. It struck me, simply a
-            beautiful piece. Soon all contents on politics and sports
-            disappeared from my social media, and my YouTube was filled with
-            piano and classical pieces. And then there were Chopin, Mozart,
-            Paganini pieces playing when I washed my clothes, when I did the
-            dishes, or when I did my homework.
+            <b>The Sound: </b>I only got into piano and classical music late in
+            high school. One day, I stumbled upon a YouTube video of a pianist
+            named <b>Rousseau</b> playing the third movement of{" "}
+            <b>Moonlight Sonata</b>, and it struck me as simply beautiful.
+            Before I knew it, all the politics and sports content on my social
+            media vanished, replaced by a flood of piano and classical pieces.
+            Soon, I found myself listening to works by <b>Chopin</b>,{" "}
+            <b>Mozart</b>, and <b>Paganini</b> while washing my clothes, doing
+            the dishes, or finishing my homework.
           </p>
           <BarChartRaceArtists />
           <h3 className="plot-text">The greatest</h3>
           <p className="plot-text">
-            <b>1. The Pledge: </b>The first few times I listened to the piece, I
-            didn’t think much of it. Still, I decided to give it a few more
-            chances, since it was the only video by Rousseau with over 100M
-            views. It was a typical dark, rainy day that saps your motivation to
-            do anything normally enjoyable. I could not focus on my homework,
-            and playing games was boring, and picking up a book was tedious. Out
-            of boredom, I turned on the video, for it was the only reasonable
-            thing to do in that moment. The beginning pace was so slow, and the
-            sound was so small to barely hear anything at normal volume, and
-            that was always when I swiped to the next video.
+            <b>1. The Pledge: </b>The first few times I listened to the piece,
+            it didn’t leave much of an impression on me. However, I decided to
+            give it another chance, since it was the only video by Rousseau with
+            over 100 million views. It was one of those dark, rainy days that
+            drained the motivation for even the most enjoyable activities. I
+            couldn’t concentrate on my homework, gaming felt dull, and reading
+            was a chore. Out of boredom, I turned on the video—it seemed like
+            the only reasonable option at that moment. The opening was so slow,
+            and the sound was so faint that I could barely hear it at a normal
+            volume. That’s usually when I would swipe to the next video.
           </p>
           <p className="plot-text">
-            <b>2. The Turn: </b>But on that particular day, I kept my focus on
-            the rhythm, anticipating the transition to the main theme. I have
-            never been that far into the piece before, and it felt like taking
-            the same old route to school every day until one day you stumbled
-            upon a hidden, vibrant corner that captivated you. I found myself
-            desiring to explore every angle of that small path, intrigued by its
-            newfound beauty, gently closed my eyes and carefully catched every
-            node of the rhythm.
+            <b>2. The Turn: </b>But on that particular day, I was really paying
+            attention to the rhythm, waiting for the change to the major theme.
+            It felt like I was traveling the same old path to school every day—I
+            had never listened to the piece that intently before—until I one day
+            happened onto a secret, colorful area that captured my attention. I
+            was captivated by the newfound beauty of that little route and found
+            myself wanting to investigate every inch of it. I closed my eyes
+            softly and submerged myself, listening intently to every beat of the
+            rhythm.
           </p>
           <div className="plot">
             <img
@@ -112,14 +115,14 @@ function SpotifyBlog() {
             https://www.youtube.com/watch?v=4VR-6AS0-l4
           </p>
           <p className="plot-text">
-            <b>3. The Prestige: </b>The main theme soared, and in that moment, I
-            just knew Nuvole Bianche was the greatest musical pieces I ever
-            listened to. It was a rainy, dreadful afternoon, with only the
-            faintest rays of sunlight struggling to break through the dark
-            clouds shadowing the boundless and gloomy sky. In a small apartment,
-            a gentle melody warmed the air, weaving threads of hope and joy.
-            Like an a mischievous child, I cracked a little smile, and all the
-            fatigue and worries all these times magically dissolved into
+            <b>3. The Prestige: </b>Right when the main theme soared, I
+            immediately knew that "Nuvole Bianche" was one of the greatest
+            musical pieces I had ever heard. It was a dreary, rainy afternoon,
+            with only the faintest rays of sunlight struggling to break through
+            the dark heavy clouds shrouding the endless, gloomy sky. In a small
+            apartment, a gentle melody warmed the air, weaving threads of hope
+            and joy. Like an a mischievous child, I cracked a little smile, and
+            all the fatigue and worries all these times magically dissolved into
             nothingness. Suddenly in that space, the world faded away, and
             nothing had ever existed. It was just me standing there, speechless,
             and heart-warmed, and puzzled, wondering if there were others, from
@@ -140,14 +143,13 @@ function SpotifyBlog() {
           </h2>
           <SankeyDiagram />
           <div className="plot-text">
-            <b>Proliferation: </b>My passion for music spans a vibrant array of
-            genres. I’m drawn to the heartfelt melodies of US-UK songs,
-            especially those by Taylor Swift, whose storytelling resonates
-            deeply with me. Equally, I find solace and inspiration in the world
-            of instrumental music. Each note tells a story, and every rhythm
-            evokes cherished memories of my life. Music fills my heart with
-            gratitude, a constant source of joy and a reminder of the countless
-            blessings that have come my way.
+            <b>Proliferation: </b>My love for music spans a wide range of
+            genres. I’m drawn to the heartfelt melodies of US-UK songs, and
+            Taylor Swift songs will always hold a special place in my heart.
+            Equally, I find solace and inspiration in the world of instrumental
+            music. Each note tells a story, and music fills my soul with immense
+            gratitude. A reminder of the countless blessings that have come my
+            way.
           </div>
           <h2 className="plot-heading">
             3. Gantt Chart: Top Songs and Artists of the Month
