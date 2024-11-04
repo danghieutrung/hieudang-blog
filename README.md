@@ -2,7 +2,7 @@
 
 Visit my Website at: [https://dangtrunghieu.vercel.app/](https://dangtrunghieu.vercel.app/)
 
-Contact me at [hieudangtrung@protonmail.com](mailto:hieudangtrung@protonmail.com)
+Contact me at [contact.hieudang@gmail.com](mailto:contact.hieudang@gmail.com)
 
 ## Installing
 `yarn install`
