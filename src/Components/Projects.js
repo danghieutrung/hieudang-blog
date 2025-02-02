@@ -9,6 +9,28 @@ const Projects = () => {
       <div className="work__container container grid">
         <article className="work__card">
           <a
+            href="https://squerrydb-frontend-production.up.railway.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="work__link"
+          >
+            <h2 className="work__title">SquerryDB</h2>
+            <p className="work__description">
+              Visualizing App for IMDb Movie Series
+            </p>
+
+            <img
+              src="/img/recent_works/project_squerrydb.png"
+              alt=""
+              className="work__img"
+            />
+
+            <i className="ri-arrow-right-line"></i>
+          </a>
+        </article>
+
+        <article className="work__card">
+          <a
             href="https://www.sciencedirect.com/science/article/abs/pii/S2212095524002475"
             target="_blank"
             rel="noopener noreferrer"
@@ -30,7 +52,12 @@ const Projects = () => {
         </article>
 
         <article className="work__card">
-          <a href="#projects" target="_blank" rel="noopener" className="work__link">
+          <a
+            href="#projects"
+            target="_blank"
+            rel="noopener"
+            className="work__link"
+          >
             <h2 className="work__title">T2 GAN</h2>
             <p className="work__description">
               GAN for T2 (0.45°C MAE). Work unavailable
@@ -80,28 +107,6 @@ const Projects = () => {
 
             <img
               src="/img/recent_works/project_imdb_tableau.png"
-              alt=""
-              className="work__img"
-            />
-
-            <i className="ri-arrow-right-line"></i>
-          </a>
-        </article>
-
-        <article className="work__card">
-          <a
-            href="https://github.com/danghieutrung/imdb-react-graphql"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="work__link"
-          >
-            <h2 className="work__title">imdb-react-graphql</h2>
-            <p className="work__description">
-              HighCharts front-end app displaying IMDB series ratings
-            </p>
-
-            <img
-              src="/img/recent_works/project_imdb_react_graphql.png"
               alt=""
               className="work__img"
             />
