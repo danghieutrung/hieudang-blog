@@ -16,7 +16,7 @@ const Projects = () => {
           >
             <h2 className="work__title">SquerryDB</h2>
             <p className="work__description">
-              Visualizing App for IMDb Movie Series
+              Visualizing App for IMDb Movie Series. PostgreSQL, GraphQL API, Next.js
             </p>
 
             <img
@@ -124,7 +124,7 @@ const Projects = () => {
           >
             <h2 className="work__title">U.S. COVID-19 Mortality Analysis</h2>
             <p className="work__description">
-              COVID-19 data analysis and forecasting
+              School Project Lead. COVID-19 data analysis and forecasting
             </p>
 
             <img
