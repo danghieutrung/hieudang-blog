@@ -21,8 +21,7 @@ const Services = () => {
 
           <h3 className="services__title">Data Analysis and Visualization</h3>
           <p className="services__description">
-            Conduct quantitative data analysis. Create meaningful, simple or
-            complex visualizations
+            Statistical analysis & data visualizations
           </p>
         </article>
 

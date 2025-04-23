@@ -38,7 +38,7 @@ const Projects = () => {
           >
             <h2 className="work__title">Published Paper</h2>
             <p className="work__description">
-              Impact of rainfall on air temperature, humidity and ...
+              Impact of rainfall on air temperature, humidity and thermal comfort in tropical urban parks
             </p>
 
             <img
@@ -80,7 +80,7 @@ const Projects = () => {
             rel="noopener noreferrer"
             className="work__link"
           >
-            <h2 className="work__title">GSoC 2023</h2>
+            <h2 className="work__title">Google Summer of Code 2023</h2>
             <p className="work__description">http4s Ember WebSocket Client</p>
 
             <img
@@ -102,7 +102,7 @@ const Projects = () => {
           >
             <h2 className="work__title">imdb-tableau</h2>
             <p className="work__description">
-              Tableau Dashboard displaying IMDB series ratings
+              Interactive Tableau Dashboard displaying IMDB series ratings
             </p>
 
             <img

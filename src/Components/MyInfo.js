@@ -7,23 +7,34 @@ const MyInfo = () => {
       <h2 className="section__title">MY INFO</h2>
 
       <div className="info__container container grid">
-        {/* ABOUT */}
         <div className="about grid">
           <div className="about__content">
             <h3 className="info__title">About Me</h3>
             <p className="about__description">
-              - I am a final-year student from Nanyang Technological University.
-              <br /> - I am proficient in <b>data preprocessing</b>,{" "}
-              <b>data analysis</b>, and <b>data visualization</b> with several
-              completed projects and a published paper.
-              <br /> - I have experience{" "}
-              <b>developing and training AI models</b>{" "}
-              during my last internship.
-              <br /> - I also have familiarity with software development,
-              including a completed <b>Google Summer of Code Project</b> and
-              built web applications.
-              <br /> - Feel free to check out my{" "}
-              <a href="/blogs">Personal Blog</a>!
+              - Final-year student from Nanyang Technological University
+              <br /> - Champion of 17th NTU PEAK Leadership Competition
+              <br /> - Experience in <b>data analysis</b> and{" "}
+              <b>visualization</b> with completed projects and a published paper
+              <br /> - <b>Open-source contribution</b> to{" "}
+              <a
+                href="https://bank.green/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                bank.green
+              </a>{" "}
+              and{" "}
+              <a
+                href="https://github.com/http4s/http4s"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                http4s
+              </a>
+              <br /> - Familiarity with software development, including a
+              completed <b>Google Summer of Code Project</b> and several
+              deployed web applications
+              <br /> - Check out my <a href="/blogs">Personal Blog</a>
             </p>
             <a
               href="pdf/DangTrungHieu_CV.pdf"
@@ -35,13 +46,12 @@ const MyInfo = () => {
             </a>
           </div>
           <img
-            src="img/ava/me_vnyarun.jpg"
+            src="img/ava/me_ntupeak.jpg"
             alt="Profile"
             className="about__img"
           />
         </div>
 
-        {/* EXPERIENCE */}
         <div className="experience">
           <h3 className="info__title">Experience</h3>
           <div className="experience__content grid">
@@ -118,7 +128,6 @@ const MyInfo = () => {
           </div>
         </div>
 
-        {/* SKILLS */}
         <div className="skills">
           <h3 className="info__title">Skills</h3>
           <div className="skills__content grid">
