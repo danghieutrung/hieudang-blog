@@ -41,7 +41,7 @@ function SpotifyBlog() {
             1. Bar Chart Race: All-time Most-played Songs and Artists
           </h2>
           <BarChartRaceSongs />
-          <h3 className="plot-text">The Queen</h3>
+          {/* <h3 className="plot-text">The Queen</h3>
           <p className="plot-text">
             <b>Taylor Swift: </b>Growing up, I spent countless hours listening
             to Taylor Swift in my dad's car. I remember when{" "}
@@ -78,9 +78,9 @@ function SpotifyBlog() {
             Soon, I found myself listening to works by <b>Chopin</b>,{" "}
             <b>Mozart</b>, and <b>Paganini</b> while washing my clothes, doing
             the dishes, or finishing my homework.
-          </p>
+          </p> */}
           <BarChartRaceArtists />
-          <h3 className="plot-text">The greatest</h3>
+          {/* <h3 className="plot-text">The greatest</h3>
           <p className="plot-text">
             <b>1. The Pledge: </b>The first few times I listened to the piece,
             it didn’t leave much of an impression on me. However, I decided to
@@ -137,12 +137,12 @@ function SpotifyBlog() {
             superior. Eventually I picked up V-Pop late in my 3rd year in
             university, and I have always been on my V-Pop playlist lately. Yet
             Taylor Swift is still the best❤️❤️❤️.
-          </p>
+          </p> */}
           <h2 className="plot-heading">
             2. Sankey Diagram: 100 Most-played Songs
           </h2>
           <SankeyDiagram />
-          <div className="plot-text">
+          {/* <div className="plot-text">
             <b>Proliferation: </b>My love for music spans a wide range of
             genres. I’m drawn to the heartfelt melodies of US-UK songs, and
             Taylor Swift songs will always hold a special place in my heart.
@@ -150,12 +150,12 @@ function SpotifyBlog() {
             music. Each note tells a story, and music fills my soul with immense
             gratitude. A reminder of the countless blessings that have come my
             way.
-          </div>
+          </div> */}
           <h2 className="plot-heading">
             3. Gantt Chart: Top Songs and Artists of the Month
           </h2>
           <GanttArtist />
-          <p className="plot-text">
+          {/* <p className="plot-text">
             <b>The greatest musical achievement: </b>In 5 years, only 9 artists
             have ever achieved the prestigious title of being named my personal
             Artist of the Month. Among them, <b>Taylor Swift</b> stands out with
@@ -167,9 +167,9 @@ function SpotifyBlog() {
             and <b>Andiez</b> were my top artists in May and June 2024, while{" "}
             <b>Sơn Tùng M-TP</b> has dominated as my top artist for the past 4
             months.
-          </p>
+          </p> */}
           <GanttSong />
-          <p className="plot-text">
+          {/* <p className="plot-text">
             <b>The greatest tracks ever produced: </b>While the Top Artist of
             the Month award features only nine artists, the Song of the Month
             award includes 22 songs. Nuvole Bianche has achieved the remarkable
@@ -181,7 +181,7 @@ function SpotifyBlog() {
             have also seen V-Pop tracks dominate the charts, including{" "}
             <b>Suýt Nữa Thì</b> in May 2024 and <b>Nơi Này Có Anh</b> in the
             last 5 months.
-          </p>
+          </p> */}
           <h2 className="plot-heading">
             4. Sunburst Chart: My Most-played Albums
           </h2>
@@ -191,7 +191,7 @@ function SpotifyBlog() {
             </b>
           </p>
           <Sunburst />
-          <p className="plot-text">
+          {/* <p className="plot-text">
             <b>Taylor Swift: </b>No surprise that Taylor Swift dominated another
             chart with 7 albums, with my the 3 most popular being{" "}
             <b>Speak Now</b>, <b>Red</b>, and <b>Fearless</b>.
@@ -200,10 +200,10 @@ function SpotifyBlog() {
             <b>Ludovico Einaudi: </b>The chart also features 6 albums by the
             Italian composer. Besides <b>Nuvole Bianche</b>, <b>Oltremare</b>,{" "}
             <b>Experience</b>, and <b>Primavera</b> are my favorite tracks.
-          </p>
+          </p> */}
           <h2 className="plot-heading">5. Matrix Table: My Taylor Top 10</h2>
           <MatrixTaylor />
-          <p className="plot-text">
+          {/* <p className="plot-text">
             <b>Fearless: </b>
             <i>Haters gonna hate hate hate hate hate</i>, but if there is
             someone that deserves a chart of her own, that person is Taylor
@@ -227,9 +227,9 @@ function SpotifyBlog() {
           </p>
           <h2 className="plot-heading">
             6. Diverging Bar Chart: Westlife vs Backstreet Boys
-          </h2>
+          </h2> */}
           <DivergingBar />
-          <p className="plot-text">
+          {/* <p className="plot-text">
             <b>Recall: </b> I still remember those summer nights when my mom, my
             brother, and I would take the 51 bus to Chùa Bộc to buy new clothes.
             Almost every shop we visited, an English song seemed to play on
@@ -240,10 +240,10 @@ function SpotifyBlog() {
             again. He played the song while taking a shower, and it was{" "}
             <b>My Love</b> by Westlife. It felt like a 15-year search had come
             to an end, reconnecting me with a cherished piece of my childhood.
-          </p>
+          </p> */}
           <h2 className="plot-heading">7. Treemap Chart: Disney Songs</h2>
           <Treemap />
-          <p className="plot-text">
+          {/* <p className="plot-text">
             <b>Mischievous: </b>There's a child in me that comes to life when I
             watch animated movies or listen to Disney songs. When I was little,
             I watched <b>Tangled</b> with my brother late one night, and mom
@@ -253,20 +253,20 @@ function SpotifyBlog() {
             my favorite childhood movies, along with{" "}
             <b>How to Train Your Dragon</b>, which I’ve seen at least 15 times,
             and also <b>Toy Story</b> and <b>Finding Nemo</b>.
-          </p>
+          </p> */}
           <h2 className="plot-heading">
             8. Waterfall Chart: My Monthly Listening Activity
           </h2>
           <Waterfall />
-          <p className="plot-text">
+          {/* <p className="plot-text">
             <b>Ocean Waves: </b>Years pass, carrying with them the ups and downs
             of life. Yet music remains a constant, always true and ready to
             uplift my spirits. On average, I spend about 90 minutes a day on
             Spotify—an unexpected companion I never knew I needed.
-          </p>
+          </p> */}
           <h2 className="plot-heading">9. Wind Rose Chart: The Replayer</h2>
           <WindRose />
-          <p className="plot-text">
+          {/* <p className="plot-text">
             <b>Reminiscent: </b> I could read <i>the very last line</i> of{" "}
             <b>Harry Potter and the Half-Blood Prince</b> a hundred times more
             and still be astounded just like the first time. I could watch{" "}
@@ -284,23 +284,23 @@ function SpotifyBlog() {
             hours. I embrace whatever resonates with my feelings in the moment,
             never feeling the urge to seek something new out of boredom. After
             all, loyalty is always reflected in the name my parents gave me.
-          </p>
+          </p> */}
           <h2 className="plot-heading">10. Dashboard: 163000 Minutes</h2>
           <Dashboard />
-          <p className="plot-text">
+          {/* <p className="plot-text">
             <b>Tomorrow: </b>And this dashboard, shamelessly made from
             Powerpoint, wraps my 163000 minutes on Spotify. I will keep
             listening and discovering new rhythms and the sounds of life. You've
             come this far, and I hope you enjoy these little glimpses into my
             life. I’m sure you’ll write meaningful stories of your own, and I
             believe in each and every one of you. ❤️
-          </p>
-          <p className="plot-text">
+          </p> */}
+          {/* <p className="plot-text">
             <br />
             <br />
-            <b>Blessings: </b>I would like to say thank you to my dad, mom, and
-            brother for the constant support that I am forever grateful for. And
-            a special shoutout to my wonderful friends,{" "}
+            <b>Blessings: </b>I would like to say thank you to my dad,
+            mom, and brother for the constant support that I am forever grateful
+            for. And a special shoutout to my wonderful friends,{" "}
             <a
               href="https://www.linkedin.com/in/luke-duc-nguyen-minh/"
               target="_blank"
@@ -325,7 +325,7 @@ function SpotifyBlog() {
               Thang
             </a>
             , who inspired me to start this small project!
-          </p>
+          </p> */}
         </div>
         <ContactMe />
       </main>
