@@ -48,7 +48,7 @@ const WindRose2 = () => {
         name: "duration",
         marker: { color: "#f0f921" },
         type: "barpolar",
-        hovertemplate: 'Hour: %{theta}<br>Minutes: %{r:.0f}<extra></extra>'
+        hovertemplate: "Hour: %{theta}<br>Minutes: %{r:.0f}<extra></extra>",
       },
     ];
   };
@@ -80,11 +80,11 @@ const WindRose2 = () => {
         },
       },
       radialaxis: {
-        angle:90,
+        angle: 90,
         tickangle: 45,
         showgrid: false,
         showline: false,
-        showticklabels:false,
+        showticklabels: false,
         ticks: "",
       },
     },
