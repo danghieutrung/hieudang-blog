@@ -1,6 +1,4 @@
 // src/Pages/Blogs/SpotifyBlog/SpotifyBlog.js
-import React from "react";
-
 import ContactMe from "../../../Components/ContactMe.js";
 import HomeSection from "../../../Components/HomeSection.js";
 import Head from "../../../Components/Head.js";

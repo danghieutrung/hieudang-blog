@@ -1,29 +1,25 @@
 // src/Pages/Blogs/SpotifyBlog/Plots/GanttArtist.js
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Plot from "react-plotly.js";
 import Papa from "papaparse";
 
 const GanttArtist = () => {
   const [data, setData] = useState([]);
-  const [plotWidth, setPlotWidth] = useState(720); // Default width
+  const [plotWidth, setPlotWidth] = useState(720);
 
   useEffect(() => {
-    // Function to determine the width based on window size
     const updatePlotWidth = () => {
-      if (window.innerWidth < 768) { // Adjust the breakpoint as needed
+      if (window.innerWidth < 768) {
         setPlotWidth(window.innerWidth - 20);
       } else {
         setPlotWidth(720);
       }
     };
 
-    // Set initial width
     updatePlotWidth();
 
-    // Add event listener for resize
     window.addEventListener("resize", updatePlotWidth);
     
-    // Cleanup listener on unmount
     return () => {
       window.removeEventListener("resize", updatePlotWidth);
     };
@@ -82,7 +78,7 @@ const GanttArtist = () => {
           b: 50,
         },
         height: 360,
-        width: plotWidth, // Use the dynamic width here
+        width: plotWidth,
         paper_bgcolor: "#181e39",
         plot_bgcolor: "#181e39",
         hovermode: "closest",

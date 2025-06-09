@@ -1,5 +1,5 @@
 // src/Pages/Blogs/SpotifyBlog/Plots/SankeyDiagram.js
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Plot from "react-plotly.js";
 
 const SankeyDiagram = () => {
