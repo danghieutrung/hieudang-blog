@@ -264,27 +264,8 @@ function SpotifyBlog() {
             uplift my spirits. On average, I spend about 90 minutes a day on
             Spotify—an unexpected companion I never knew I needed.
           </p> */}
-          <h2 className="plot-heading">9. Wind Rose Chart: The Replayer</h2>
+          <h2 className="plot-heading">9. Wind Rose Chart: Listening Hour</h2>
           <WindRose />
-          {/* <p className="plot-text">
-            <b>Reminiscent: </b> I could read <i>the very last line</i> of{" "}
-            <b>Harry Potter and the Half-Blood Prince</b> a hundred times more
-            and still be astounded just like the first time. I could watch{" "}
-            <b>How to Train Your Dragon</b> for the sixteenth time and still
-            enjoy every second of it. I still relive the moment when my favorite
-            player and childhood idol transformed into the Flying Dutchman
-            during that World Cup rematch, even though he later moved to my
-            least favorite club - one of those rare moments that broke my heart
-            of a little child💔.
-          </p>
-          <p className="plot-text">
-            <b>Loyalty: </b>I often find myself lost in the uplifting melody of{" "}
-            <b>Sparks Fly</b>, the melancholic theme from <b>Enchanted</b>, or
-            the relaxing flow of <b>Nuvole Bianche</b>, playing on repeat for
-            hours. I embrace whatever resonates with my feelings in the moment,
-            never feeling the urge to seek something new out of boredom. After
-            all, loyalty is always reflected in the name my parents gave me.
-          </p> */}
           <h2 className="plot-heading">10. Dashboard: 163000 Minutes</h2>
           <Dashboard />
           {/* <p className="plot-text">
