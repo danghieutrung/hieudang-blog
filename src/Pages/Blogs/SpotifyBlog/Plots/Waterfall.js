@@ -1,90 +1,78 @@
 // src/Pages/Blogs/SpotifyBlog/Plots/Waterfall.js
-import { useState, useEffect } from "react";
-import Plot from "react-plotly.js";
-import Papa from "papaparse";
+import {
+  ChartFigure,
+  axisStyle,
+  baseLayout,
+  fmt,
+  pct,
+  signed,
+  tooltip,
+  useChartTheme,
+  useCsv,
+} from "../../../../theme/chartTheme";
+
+const formatMonth = (date) =>
+  new Date(date).toLocaleDateString("en-GB", { month: "long", year: "numeric" });
+
+const daysIn = (date) => {
+  const d = new Date(date);
+  return new Date(d.getFullYear(), d.getMonth() + 1, 0).getDate();
+};
 
 const Waterfall = () => {
-  const [data, setData] = useState(null);
-  useEffect(() => {
-    Papa.parse("/data/8_waterfall_month.csv", {
-      download: true,
-      header: true,
-      complete: function (results) {
-        setData(results.data);
-      },
-    });
-  }, []);
+  const theme = useChartTheme();
+  const rows = useCsv("/data/8_waterfall_month.csv");
 
-  const [plotHeight, setPlotHeight] = useState(400);
-  const [plotWidth, setPlotWidth] = useState(720);
-  useEffect(() => {
-    const updatePlotDimension = () => {
-      if (window.innerWidth < 768) {
-        var w = window.innerWidth - 50;
-        var h = parseInt(w * 0.55);
-        setPlotHeight(h);
-        setPlotWidth(w);
-      } else {
-        setPlotHeight(400);
-        setPlotWidth(720);
-      }
-    };
-
-    updatePlotDimension();
-    window.addEventListener("resize", updatePlotDimension);
-    return () => {
-      window.removeEventListener("resize", updatePlotDimension);
-    };
-  }, []);
-
-  const createPlotData = (data) => {
-    if (!data || data.length === 0) return [];
-
-    const x = data.map((row) => row.x);
-    const y = data.map((row) => row.y);
-    const text = data.map((row) => "Month " + parseInt(row.n_weeks));
-
-    return [
-      {
-        name: "8_waterfall",
-        type: "waterfall",
-        x: x,
-        y: y,
-        text: text,
-        text_position: "inside",
-        decreasing: { marker: { color: "#FF7F7F" } },
-        increasing: { marker: { color: "#A0E5D9" } },
-      },
-    ];
-  };
+  const data = [
+    {
+      type: "waterfall",
+      x: rows.map((row) => row.x),
+      y: rows.map((row) => Number(row.y)),
+      // The first month starts from zero; every later bar is a change.
+      measure: rows.map((_, i) => (i === 0 ? "absolute" : "relative")),
+      hovertemplate: rows.map((row, i) => {
+        const change = Number(row.y);
+        const previous = Number(row.duration) - change;
+        return tooltip(theme, formatMonth(row.x), [
+          ["Played", `${fmt(row.duration)} min (${fmt(row.duration / 60)} h)`],
+          ["Per day", `${fmt(row.duration / daysIn(row.x))} min`],
+          i > 0 && ["vs previous", `${signed(change)} min${previous > 0 ? ` (${change >= 0 ? "+" : "−"}${pct(Math.abs(change), previous)})` : ""}`],
+        ]);
+      }),
+      increasing: { marker: { color: theme.up } },
+      decreasing: { marker: { color: theme.down } },
+      totals: { marker: { color: theme.neutral } },
+      connector: { line: { color: theme.axis, width: 1 } },
+    },
+  ];
 
   const layout = {
-    height: plotHeight,
-    width: plotWidth,
-    xaxis: {
-      title: "",
-      color: "white",
-    },
+    ...baseLayout(theme),
+    showlegend: false,
+    bargap: 0.25,
+    xaxis: { ...axisStyle(theme), type: "date", showgrid: false, dtick: "M12", tickformat: "%Y" },
     yaxis: {
-      title: "min",
-      color: "white",
-    },
-    paper_bgcolor: "#181e39",
-    plot_bgcolor: "#181e39",
-    margin: {
-      l: 50,
-      r: 50,
-      b: 50,
-      t: 50,
+      ...axisStyle(theme),
+      title: { text: "Minutes per month", font: { size: 12, color: theme.muted } },
+      tickformat: ",",
+      rangemode: "tozero",
     },
   };
 
-  const config = { responsive: true };
-
   return (
-    <div className="plot">
-      <Plot data={createPlotData(data)} layout={layout} config={config} />
-    </div>
+    <ChartFigure
+      title="Minutes played per month"
+      subtitle={
+        <>
+          <span className="legend-swatch" style={{ background: theme.up }} /> More than the month before
+          <span className="legend-swatch" style={{ background: theme.down }} /> Less than the month before
+        </>
+      }
+      note="Peak: May 2024 with 9,611 minutes. September 2024 is a partial month."
+      height={400}
+      data={data}
+      layout={layout}
+    />
   );
 };
 

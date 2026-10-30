@@ -2,27 +2,37 @@
 import React from "react";
 import ContactMe from "../Components/ContactMe";
 import Head from "../Components/Head";
-import Header from "../Components/Header";
+import SiteHeader from "../Components/SiteHeader";
 import HomeSection from "../Components/HomeSection";
 import Footer from "../Components/Footer";
 import MyInfo from "../Components/MyInfo";
-import OngoingProjects from "../Components/OngoingProjects";
+import Experience from "../Components/Experience";
 import Projects from "../Components/Projects";
 import Services from "../Components/Services";
 import ScrollUpButton from "../Components/ScrollUpButton";
+
+const links = [
+  { href: "#home", label: "Home" },
+  { href: "#info", label: "About" },
+  { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#services", label: "Services" },
+  { href: "#contact", label: "Contact" },
+  { href: "/blogs/", label: "Blog", external: true },
+];
 
 function Home() {
   return (
     <div>
       <Head />
-      <Header />
+      <SiteHeader links={links} />
       <main className="main">
         <HomeSection
           imgUrl={"/img/ava/me_nba.jpg"}
-          profession={"Data Analyst"}
+          profession={"Environmental consultant · Data & AI"}
         />
         <MyInfo />
-        <OngoingProjects />
+        <Experience />
         <Projects />
         <Services />
         <ContactMe />

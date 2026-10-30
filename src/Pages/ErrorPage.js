@@ -1,23 +1,29 @@
 // src/Pages/ErrorPage.js
 import React from "react";
 import Head from "../Components/Head";
-import ErrorHeader from "../Components/ErrorHeader";
-import HomeSection from "../Components/HomeSection";
+import Footer from "../Components/Footer";
+import SiteHeader from "../Components/SiteHeader";
 
 const ErrorPage = () => {
   return (
     <div>
-      <Head />
-      <ErrorHeader />
+      <Head title="Page not found · Dang Trung Hieu" />
+      <SiteHeader links={[{ href: "/", label: "Home" }, { href: "/blogs/", label: "Blog" }]} />
       <main className="main">
-        <HomeSection imgUrl={"/img/ava/me_little.jpg"}/>
-        <section className="home section" id="home">
-          Page not found. Go back to{" "}
-          <a href="/">
-            <b>Main Page</b>
-          </a>
+        <section className="page-hero page-hero--center" id="home">
+          <div className="container">
+            <p className="section__eyebrow">404</p>
+            <h1 className="page-hero__title">Page not found</h1>
+            <p className="page-hero__lead">
+              The page you're looking for doesn't exist or has moved.
+            </p>
+            <a href="/" className="button">
+              Back to main page
+            </a>
+          </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 };

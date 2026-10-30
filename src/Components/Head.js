@@ -1,9 +1,8 @@
 // src/Components/Head.js
 import React from "react";
 import { Helmet } from "react-helmet";
-// import './styles.css';
 
-const Head = () => {
+const Head = ({ title = "Dang Trung Hieu" }) => {
   return (
     <Helmet>
       <meta charset="UTF-8" />
@@ -18,11 +17,7 @@ const Head = () => {
         href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
       />
 
-      {/* CSS */}
-      <link rel="stylesheet" href="/css/styles.css" />
-      {/* <link rel="stylesheet" href="./styles.css" /> */}
-
-      <title>Dang Trung Hieu</title>
+      <title>{title}</title>
     </Helmet>
   );
 };

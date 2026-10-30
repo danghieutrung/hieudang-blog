@@ -1,165 +1,119 @@
 // src/Components/MyInfo.js
 import React from "react";
 
+const highlights = [
+  { value: "100+", label: "staff trained in AI automation across all country offices" },
+  { value: "10 min", label: "to draft an EMMP proposal or monthly report with my LLM workflow" },
+  { value: "5TB+", label: "of survey data, 20+ years of it, being moved to one geospatial platform" },
+];
+
+const skillGroups = [
+  {
+    title: "Programming languages",
+    skills: [
+      { name: "Python", logo: "python" },
+      { name: "R", logo: "r" },
+      { name: "SQL", logo: "sql" },
+      { name: "TypeScript / JavaScript" },
+      { name: "Scala", logo: "scala" },
+      { name: "HTML", logo: "html" },
+      { name: "Haskell", logo: "haskell" },
+    ],
+  },
+  {
+    title: "Software and tools",
+    skills: [
+      { name: "QGIS" },
+      { name: "PostgreSQL", logo: "postgresql" },
+      { name: "FastAPI" },
+      { name: "Next.js / React", logo: "react" },
+      { name: "Git", logo: "git" },
+      { name: "Power BI", logo: "powerbi" },
+      { name: "Tableau", logo: "tableau" },
+    ],
+  },
+  {
+    title: "AI",
+    skills: [
+      { name: "Machine learning" },
+      { name: "Computer vision" },
+      { name: "LLM workflows" },
+      { name: "AI coding assistants" },
+    ],
+  },
+];
+
 const MyInfo = () => {
   return (
     <section className="info section" id="info">
-      <h2 className="section__title">MY INFO</h2>
+      <div className="info__container container">
+        <p className="section__eyebrow">About</p>
+        <h2 className="section__title">A bit about me</h2>
 
-      <div className="info__container container grid">
-        <div className="about grid">
+        <div className="about">
           <div className="about__content">
-            <h3 className="info__title">About Me</h3>
             <p className="about__description">
-              - Final-year student from Nanyang Technological University
-              <br /> - Champion of 17th NTU PEAK Leadership Competition
-              <br /> - Experience in <b>data analysis</b> and{" "}
-              <b>visualization</b> with completed projects and a published paper
-              <br /> - <b>Open-source contribution</b> to{" "}
-              <a
-                href="https://bank.green/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                bank.green
-              </a>{" "}
-              and{" "}
-              <a
-                href="https://github.com/http4s/http4s"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                http4s
-              </a>
-              <br /> - Familiarity with software development, including a
-              completed <b>Google Summer of Code Project</b> and several
-              deployed web applications
-              <br /> - Check out my <a href="/blogs">Personal Blog</a>
+              I'm an Associate Consultant at <b>ESC Environment Singapore</b>,
+              where I combine biodiversity fieldwork with data engineering and
+              AI. I build the field data systems, automated survey pipelines
+              and ecological AI workflows (camera trap ML, LLM tools) behind
+              EIA and EMMP projects, working with agencies including NParks,
+              NEA and LTA.
+            </p>
+            <p className="about__description">
+              I graduated in <b>Environmental Engineering</b> from Nanyang
+              Technological University (Honours, Merit) in 2025. Before that I
+              worked on machine learning and climate data at the
+              Singapore-MIT Alliance for Research and Technology, contributed a
+              WebSocket client to http4s through <b>Google Summer of Code</b>,
+              and won first place in the NTU PEAK Leadership: Sustainability
+              competition.
             </p>
             <a
-              href="pdf/DangTrungHieu_CV.pdf"
+              href="/cv/DangTrungHieu_CV.docx"
               download
               target="_blank"
               className="button about__button"
             >
-              Download CV
+              <i className="ri-download-line"></i> Download CV
             </a>
           </div>
           <img
-            src="img/ava/me_ntupeak.jpg"
-            alt="Profile"
+            src="/img/ava/me_ntupeak.jpg"
+            alt="Dang Trung Hieu at the NTU PEAK Leadership competition"
             className="about__img"
           />
         </div>
 
-        <div className="experience">
-          <h3 className="info__title">Experience</h3>
-          <div className="experience__content grid">
-            <div className="experience__data grid">
-              <h2 className="experience__company">Singapore-MIT</h2>
-              <div>
-                <h3 className="experience__profession">
-                  Machine Learning Engineer
-                </h3>
-                <span className="experience__date">05/24 - 08/24</span>
-                <p className="experience__description">
-                  - GAN model for temperature downscaling
-                </p>
-                <p className="experience__description">
-                  - Achieved 0.45°C MAE, exceeded target of 2°C
-                </p>
-              </div>
+        <div className="highlights">
+          {highlights.map((item) => (
+            <div className="highlight" key={item.value}>
+              <p className="highlight__value">{item.value}</p>
+              <p className="highlight__label">{item.label}</p>
             </div>
-
-            <div className="experience__data grid">
-              <h2 className="experience__company">Singapore-MIT</h2>
-              <div>
-                <h3 className="experience__profession">Data Analyst</h3>
-                <span className="experience__date">01/24 - 04/24</span>
-                <p className="experience__description">
-                  - Large, multitable data preprocessing
-                </p>
-                <p className="experience__description">
-                  - Statistical analysis and visualizations
-                </p>
-                <p className="experience__description">
-                  -{" "}
-                  <a
-                    href="https://www.sciencedirect.com/science/article/abs/pii/S2212095524002475"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Published paper
-                  </a>{" "}
-                  on Urban Climate Journal
-                </p>
-              </div>
-            </div>
-
-            <div className="experience__data grid">
-              <h2 className="experience__company">Scala Center</h2>
-              <div>
-                <h3 className="experience__profession">Student Developer</h3>
-                <span className="experience__date">05/23 - 08/23 (Remote)</span>
-                <p className="experience__description">
-                  -{" "}
-                  <a
-                    href="https://summerofcode.withgoogle.com/programs/2023/projects/O5hVJAO1"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    GSoC 2023
-                  </a>
-                  : http4s Ember WebSocket Client
-                </p>
-                <p className="experience__description">
-                  -{" "}
-                  <a
-                    href="https://www.youtube.com/watch?v=3HAStrljVwY&ab_channel=NortheastScalaSymposium"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Project Presentation
-                  </a>{" "}
-                  at Northeast Scala Symposium
-                </p>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
 
         <div className="skills">
-          <h3 className="info__title">Skills</h3>
-          <div className="skills__content grid">
-            {[
-              { src: "img/logo/info-python.svg", name: "Python" },
-              { src: "img/logo/info-r.svg", name: "R" },
-              { src: "img/logo/info-sql.svg", name: "SQL" },
-              { src: "img/logo/info-scala.svg", name: "Scala" },
-              { src: "img/logo/info-haskell.svg", name: "Haskell" },
-              { src: "img/logo/info-pandas.svg", name: "Pandas" },
-              { src: "img/logo/info-numpy.svg", name: "Numpy" },
-              { src: "img/logo/info-netcdf4.svg", name: "NetCDF4" },
-              { src: "img/logo/info-excel.svg", name: "Excel" },
-              { src: "img/logo/info-powerbi.svg", name: "Power BI" },
-              { src: "img/logo/info-tableau.svg", name: "Tableau" },
-              { src: "img/logo/info-plotly.svg", name: "Plotly" },
-              { src: "img/logo/info-sklearn.svg", name: "Scikit-learn" },
-              { src: "img/logo/info-pytorch.svg", name: "PyTorch" },
-              { src: "img/logo/info-tensorflow.svg", name: "Tensorflow" },
-              { src: "img/logo/info-graphql.svg", name: "GraphQL" },
-              { src: "img/logo/info-postgresql.svg", name: "PostgresQL" },
-              { src: "img/logo/info-git.svg", name: "Git" },
-              { src: "img/logo/info-linux.svg", name: "Linux" },
-              { src: "img/logo/info-html.svg", name: "HTML" },
-              { src: "img/logo/info-css.svg", name: "CSS" },
-              { src: "img/logo/info-react.svg", name: "React" },
-              { src: "img/logo/info-highcharts.svg", name: "HighCharts" },
-              { src: "img/logo/info-flask.svg", name: "Flask" },
-            ].map((skill, index) => (
-              <div className="skills__box" key={index}>
-                <img src={skill.src} alt={skill.name} className="skills__img" />
-                <span className="skills__name">{skill.name}</span>
+          <h3 className="info__title">Tech stack</h3>
+          <div className="skills__groups">
+            {skillGroups.map((group) => (
+              <div className="skills__group" key={group.title}>
+                <p className="skills__group-title">{group.title}</p>
+                <ul className="skills__content">
+                  {group.skills.map((skill) => (
+                    <li className="skills__box" key={skill.name}>
+                      {skill.logo && (
+                        <img
+                          src={`/img/logo/info-${skill.logo}.svg`}
+                          alt=""
+                          className="skills__img"
+                        />
+                      )}
+                      <span className="skills__name">{skill.name}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>

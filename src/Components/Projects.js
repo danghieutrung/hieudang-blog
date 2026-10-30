@@ -1,141 +1,129 @@
 // src/Components/Projects.js
 import React from "react";
 
+const projects = [
+  {
+    title: "Field data mobile app",
+    category: "ESC Environment Singapore",
+    description:
+      "Company-wide app used by every surveyor on every project: GPS, timestamped photos, cloud sync and dashboards, replacing manual data transcription.",
+    tags: ["Mobile app", "GPS", "Cloud sync", "Dashboards"],
+    img: "/img/recent_works/project_field_app.png",
+  },
+  {
+    title: "AI-assisted EMMP proposals and reports",
+    category: "ESC Environment Singapore",
+    description:
+      "LLM-assisted workflow that drafts EMMP proposals and monthly reports from documents and data in 10 minutes, with human review. Now used for all upcoming proposals and monthly reports.",
+    tags: ["LLM workflows", "Automation", "Human review"],
+    img: "/img/recent_works/project_emmp_ai.png",
+  },
+  {
+    title: "SquerryDB",
+    category: "Personal",
+    description:
+      "Full-stack app querying 11M IMDb movie and series records, charting every episode's rating season by season.",
+    tags: ["PostgreSQL", "GraphQL", "FastAPI", "Next.js"],
+    href: "https://squerrydb-frontend-production-ed50.up.railway.app/",
+    img: "/img/recent_works/project_squerrydb.png",
+  },
+  {
+    title: "163,000 Minutes on Repeat",
+    category: "Personal",
+    description:
+      "Blog post analysing five years of my music streaming through ten interactive visualisations.",
+    tags: ["Python", "Plotly", "React"],
+    href: "/blogs/spotify/",
+    img: "/blog/thumbnail/spotify_gantt.png",
+  },
+  {
+    title: "Published paper: Urban Climate",
+    category: "Publication",
+    description:
+      "Impact of rainfall on air temperature, humidity and thermal comfort in tropical urban parks.",
+    tags: ["Python", "Statistics", "Climate data"],
+    href: "https://www.sciencedirect.com/science/article/abs/pii/S2212095524002475",
+    img: "/img/recent_works/project_urbanclimate.jpg",
+  },
+  {
+    title: "Google Summer of Code 2023",
+    category: "GSoC",
+    description: "WebSocket client for the http4s Ember Scala web framework, with Scala Center.",
+    tags: ["Scala", "http4s", "Open source"],
+    href: "https://summerofcode.withgoogle.com/archive/2023/projects/O5hVJAO1",
+    img: "/img/recent_works/project_gsoc.png",
+  },
+  {
+    title: "bank.green",
+    category: "bank.green",
+    description: "Open-source contribution to a site that rates banks on their environmental harm.",
+    tags: ["Open source", "Sustainability"],
+    href: "https://bank.green/",
+  },
+  {
+    title: "FYP: ML for membrane fouling",
+    category: "Personal",
+    description:
+      "Final year project at NTU: machine learning to predict membrane fouling in water treatment.",
+    tags: ["Machine learning", "Water treatment"],
+  },
+];
+
 const Projects = () => {
   return (
     <section className="work section" id="projects">
-      <h2 className="section__title">RECENT WORKS</h2>
+      <div className="container">
+        <p className="section__eyebrow">Projects</p>
+        <h2 className="section__title">Selected work</h2>
+      </div>
 
-      <div className="work__container container grid">
-        <article className="work__card">
-          <a
-            href="https://squerrydb-frontend-production.up.railway.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="work__link"
-          >
-            <h2 className="work__title">SquerryDB</h2>
-            <p className="work__description">
-              Visualizing App for IMDb Movie Series. PostgreSQL, GraphQL API, Next.js
-            </p>
+      <div className="work__container container">
+        {projects.map((project) => {
+          const isExternal = project.href && project.href.startsWith("http");
+          const body = (
+            <>
+              {project.category && <span className="work__status">{project.category}</span>}
+              <h3 className="work__title">{project.title}</h3>
+              <p className="work__description">{project.description}</p>
+              <ul className="tags work__tags">
+                {project.tags.map((tag) => (
+                  <li key={tag} className="tag">
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+              {project.img && (
+                <img
+                  src={project.img}
+                  alt=""
+                  className="work__img"
+                  // Hide the frame until the screenshot has been added.
+                  onError={(e) => (e.currentTarget.style.display = "none")}
+                />
+              )}
+              {project.href && <i className={isExternal ? "ri-arrow-right-up-line" : "ri-arrow-right-line"}></i>}
+            </>
+          );
 
-            <img
-              src="/img/recent_works/project_squerrydb.png"
-              alt=""
-              className="work__img"
-            />
-
-            <i className="ri-arrow-right-line"></i>
-          </a>
-        </article>
-
-        <article className="work__card">
-          <a
-            href="https://www.sciencedirect.com/science/article/abs/pii/S2212095524002475"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="work__link"
-          >
-            <h2 className="work__title">Published Paper</h2>
-            <p className="work__description">
-              Impact of rainfall on air temperature, humidity and thermal comfort in tropical urban parks
-            </p>
-
-            <img
-              src="/img/recent_works/project_urbanclimate.jpg"
-              alt=""
-              className="work__img"
-            />
-
-            <i className="ri-arrow-right-line"></i>
-          </a>
-        </article>
-
-        <article className="work__card">
-          <a
-            href="#projects"
-            target="_blank"
-            rel="noopener"
-            className="work__link"
-          >
-            <h2 className="work__title">T2 GAN</h2>
-            <p className="work__description">
-              GAN for T2 (0.45°C MAE). Work unavailable
-            </p>
-
-            <img
-              src="/img/recent_works/project_T2GAN.png"
-              alt=""
-              className="work__img"
-            />
-
-            <i className="ri-arrow-right-line"></i>
-          </a>
-        </article>
-
-        <article className="work__card">
-          <a
-            href="https://summerofcode.withgoogle.com/programs/2023/projects/O5hVJAO1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="work__link"
-          >
-            <h2 className="work__title">Google Summer of Code 2023</h2>
-            <p className="work__description">http4s Ember WebSocket Client</p>
-
-            <img
-              src="/img/recent_works/project_gsoc.png"
-              alt=""
-              className="work__img"
-            />
-
-            <i className="ri-arrow-right-line"></i>
-          </a>
-        </article>
-
-        <article className="work__card">
-          <a
-            href="https://public.tableau.com/app/profile/hieu.dang5562/vizzes"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="work__link"
-          >
-            <h2 className="work__title">imdb-tableau</h2>
-            <p className="work__description">
-              Interactive Tableau Dashboard displaying IMDB series ratings
-            </p>
-
-            <img
-              src="/img/recent_works/project_imdb_tableau.png"
-              alt=""
-              className="work__img"
-            />
-
-            <i className="ri-arrow-right-line"></i>
-          </a>
-        </article>
-
-        <article className="work__card">
-          <a
-            href="https://github.com/danghieutrung/covid-19-mortality-analysis/tree/main/data"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="work__link"
-          >
-            <h2 className="work__title">U.S. COVID-19 Mortality Analysis</h2>
-            <p className="work__description">
-              School Project Lead. COVID-19 data analysis and forecasting
-            </p>
-
-            <img
-              src="/img/recent_works/project_covid19.png"
-              alt=""
-              className="work__img"
-            />
-
-            <i className="ri-arrow-right-line"></i>
-          </a>
-        </article>
+          return (
+            <article
+              className={`work__card ${project.href ? "" : "work__card--static"}`}
+              key={project.title}
+            >
+              {project.href ? (
+                <a
+                  href={project.href}
+                  className="work__link"
+                  {...(isExternal && { target: "_blank", rel: "noopener noreferrer" })}
+                >
+                  {body}
+                </a>
+              ) : (
+                body
+              )}
+            </article>
+          );
+        })}
       </div>
     </section>
   );

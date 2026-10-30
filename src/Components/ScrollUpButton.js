@@ -36,7 +36,7 @@ const ScrollUpButton = () => {
           className="scrollup show-scroll" // Add any additional styling here
           aria-label="Scroll to top"
         >
-          ↑
+          <i className="ri-arrow-up-line"></i>
         </button>
       )}
     </div>

@@ -1,84 +1,80 @@
 // src/Pages/Blogs/SpotifyBlog/Plots/Sunburst.js
-import { useState, useEffect } from "react";
-import Plot from "react-plotly.js";
-import Papa from "papaparse";
+import {
+  CUSTOM_TOOLTIP,
+  ChartFigure,
+  baseLayout,
+  fmt,
+  pct,
+  tooltipBody,
+  useChartTheme,
+  useCsv,
+  useIsNarrow,
+} from "../../../../theme/chartTheme";
+
+// The three biggest artists get their own color; the rest share a neutral.
+const highlighted = ["Taylor Swift", "Ludovico Einaudi", "Sơn Tùng M-TP"];
 
 const Sunburst = () => {
-  const [data, setData] = useState(null);
-  useEffect(() => {
-    Papa.parse("/data/4_sunburst_albums.csv", {
-      download: true,
-      header: true,
-      complete: function (results) {
-        setData(results.data);
-      },
-    });
-  }, []);
+  const theme = useChartTheme();
+  const isNarrow = useIsNarrow();
+  const rows = useCsv("/data/4_sunburst_albums.csv");
 
-  const [plotHeight, setPlotHeight] = useState(400);
-  const [plotWidth, setPlotWidth] = useState(720);
-  useEffect(() => {
-    const updatePlotDimension = () => {
-      if (window.innerWidth < 768) {
-        setPlotHeight(window.innerWidth - 50);
-        setPlotWidth(window.innerWidth - 50);
-      } else {
-        setPlotHeight(720);
-        setPlotWidth(720);
-      }
-    };
-
-    updatePlotDimension();
-    window.addEventListener("resize", updatePlotDimension);
-    return () => {
-      window.removeEventListener("resize", updatePlotDimension);
-    };
-  }, []);
-
-  const createPlotData = (data) => {
-    if (!data || data.length === 0) return [];
-
-    const children = data.map((row) => row.child);
-    const parents = data.map((row) => row.parent);
-    const values = data.map((row) => row.scale);
-    const durations = data.map((row) => row.duration);
-    const hovertemplate = children.map(
-      (child, index) =>
-        `<b>${child}</b><br>${durations[index]} minutes<extra></extra>`
-    );
-
-    return [
-      {
-        type: "sunburst",
-        labels: children,
-        parents: parents,
-        values: values,
-        hovertemplate: hovertemplate,
-        outsidetextfont: { size: 20, color: "white" },
-        leaf: { opacity: 1 },
-        marker: {
-          line: {
-            width: 2,
-            color: "black",
-          },
-        },
-      },
-    ];
+  const idOf = (row) => (row.parent ? `${row.parent}/${row.child}` : row.child);
+  const parentIdOf = (row) => {
+    if (!row.parent) return "";
+    const parentRow = rows.find((r) => r.child === row.parent);
+    return parentRow ? idOf(parentRow) : row.parent;
+  };
+  const artistOf = (row) => (row.parent === "Top Albums" ? row.child : row.parent);
+  const colorOf = (row) => {
+    if (!row.parent) return "rgba(0,0,0,0)";
+    const slot = highlighted.indexOf(artistOf(row));
+    return slot >= 0 ? theme.series[slot] : theme.neutral;
   };
 
-  const layout = {
-    margin: { l: 0, r: 0, b: 0, t: 0 },
-    height: plotHeight,
-    width: plotWidth,
-    paper_bgcolor: "#181e39",
+  const total = rows.length ? Number(rows.find((row) => !row.parent).duration) : 1;
+  const durationOf = (name) => Number((rows.find((row) => row.child === name) || {}).duration);
+  const rowTooltip = (row) => {
+    const minutes = Number(row.duration);
+    const isAlbum = row.parent && row.parent !== "Top Albums";
+    return tooltipBody(theme, row.child, [
+      isAlbum && ["Artist", row.parent],
+      ["Played", `${fmt(minutes)} min (${fmt(minutes / 60)} h)`],
+      ["Tracks played", row.n_songs],
+      row.parent && ["Share of all albums", pct(minutes, total)],
+      isAlbum && [`Share of ${row.parent}`, pct(minutes, durationOf(row.parent))],
+    ]);
   };
 
-  const config = { responsive: true };
+  const data = [
+    {
+      type: "sunburst",
+      ids: rows.map(idOf),
+      labels: rows.map((row) => row.child),
+      parents: rows.map(parentIdOf),
+      values: rows.map((row) => Number(row.duration)),
+      branchvalues: "total",
+      customdata: rows.map(rowTooltip),
+      hovertemplate: CUSTOM_TOOLTIP,
+      marker: {
+        colors: rows.map(colorOf),
+        line: { width: 2, color: theme.surface },
+      },
+      insidetextorientation: "radial",
+      insidetextfont: { color: "#ffffff", size: isNarrow ? 10 : 12 },
+      leaf: { opacity: 1 },
+    },
+  ];
 
   return (
-    <div className="plot">
-      <Plot data={createPlotData(data)} layout={layout} config={config} />
-    </div>
+    <ChartFigure
+      title="Minutes played by artist and album"
+      subtitle="Inner ring: artist. Outer ring: album. Slice size is minutes played."
+      note="Small albums are too thin to label; hover or click an artist to see them."
+      height={isNarrow ? 380 : 560}
+      data={data}
+      layout={baseLayout(theme)}
+    />
   );
 };
 

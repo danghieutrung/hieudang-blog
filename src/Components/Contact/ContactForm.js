@@ -43,12 +43,12 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="contact__form grid">
-      <div className="contact__group grid">
+    <form onSubmit={handleSubmit} className="contact__form">
+      <div className="contact__group">
         <input
           type="text"
           name="user_name"
-          placeholder="Names"
+          placeholder="Name"
           required
           className="contact__input"
           value={formData.user_name}
