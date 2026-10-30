@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Hieu",
+  "name": "Dang Trung Hieu",
   "icons": [
     {
       "src": "img/favicon.png",
@@ -10,6 +10,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#181e39"
+  "theme_color": "#f7f6f2",
+  "background_color": "#f7f6f2"
 }
