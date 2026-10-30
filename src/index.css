@@ -430,10 +430,6 @@ button {
   padding: 1.5rem;
 }
 
-.work__card--static .work__status {
-  align-self: flex-start;
-}
-
 .work__link {
   display: flex;
   flex-direction: column;
@@ -443,6 +439,7 @@ button {
 }
 
 .work__status {
+  align-self: flex-start;
   display: inline-block;
   font-size: 0.75rem;
   font-weight: 600;
@@ -481,16 +478,23 @@ button {
 
 .work__link > i {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  font-size: 1.25rem;
+  top: 1.25rem;
+  right: 1.25rem;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.125rem;
   color: var(--muted);
-  transition: transform 0.25s, color 0.25s;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: color 0.25s, border-color 0.25s, background 0.25s;
 }
 
 .work__link:hover > i {
   color: var(--accent);
-  transform: translateX(3px);
+  border-color: var(--accent);
+  background: var(--accent-soft);
 }
 
 .work__gallery {
