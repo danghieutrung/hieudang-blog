@@ -1,5 +1,5 @@
 // src/Pages/Home.js
-import React from "react";
+import React, { useEffect } from "react";
 import ContactMe from "../Components/ContactMe";
 import Head from "../Components/Head";
 import SiteHeader from "../Components/SiteHeader";
@@ -22,6 +22,21 @@ const links = [
 ];
 
 function Home() {
+  // Content renders after load, so the browser can miss a #section link;
+  // jump to it once rendered, and again after images have shifted layout.
+  useEffect(() => {
+    const id = window.location.hash.slice(1);
+    if (!id) return undefined;
+
+    const jump = () => {
+      const section = document.getElementById(id);
+      if (section) section.scrollIntoView();
+    };
+    jump();
+    window.addEventListener("load", jump, { once: true });
+    return () => window.removeEventListener("load", jump);
+  }, []);
+
   return (
     <div>
       <Head />
