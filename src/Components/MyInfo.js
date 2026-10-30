@@ -2,7 +2,7 @@
 import React from "react";
 
 const highlights = [
-  { icon: "ri-leaf-line", value: "20+", label: "EIA and EMMP projects worked on" },
+  { icon: "ri-leaf-line", value: "30+", label: "EIA, EMMP, and environmental projects worked on" },
   { icon: "ri-smartphone-line", value: "200+", label: "biodiversity surveys carried out with my field data app" },
   { icon: "ri-database-2-line", value: "10,000+", label: "survey records collected through the app" },
   { icon: "ri-map-2-line", value: "5TB+", label: "of survey data, 20+ years of it, being moved to one geospatial platform" },

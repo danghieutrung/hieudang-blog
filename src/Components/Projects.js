@@ -1,5 +1,6 @@
 // src/Components/Projects.js
-import React from "react";
+import React, { useState } from "react";
+import Lightbox from "./Lightbox";
 
 const projects = [
   {
@@ -8,7 +9,11 @@ const projects = [
     description:
       "Company-wide app used by every surveyor on every project: GPS, timestamped photos, cloud sync and dashboards, replacing manual data transcription.",
     tags: ["Mobile app", "GPS", "Cloud sync", "Dashboards"],
-    img: "/img/recent_works/project_field_app.png",
+    gallery: [
+      { src: "/img/recent_works/field_app/survey_list.jpg", alt: "Survey list with sync status" },
+      { src: "/img/recent_works/field_app/status_summary.jpg", alt: "Compiled flora data by SRDB3 conservation status" },
+      { src: "/img/recent_works/field_app/inspection_checklist.jpg", alt: "Site inspection checklist with photo capture" },
+    ],
   },
   {
     title: "AI-assisted EMMP proposals and reports",
@@ -70,6 +75,8 @@ const projects = [
 ];
 
 const Projects = () => {
+  const [viewer, setViewer] = useState({ images: [], index: null });
+
   return (
     <section className="work section" id="projects">
       <div className="container">
@@ -92,6 +99,21 @@ const Projects = () => {
                   </li>
                 ))}
               </ul>
+              {project.gallery && (
+                <div className="work__gallery">
+                  {project.gallery.map((image, i) => (
+                    <button
+                      key={image.src}
+                      className="work__shot"
+                      onClick={() => setViewer({ images: project.gallery, index: i })}
+                      aria-label={`View full size: ${image.alt}`}
+                    >
+                      <img src={image.src} alt={image.alt} loading="lazy" />
+                      <i className="ri-zoom-in-line"></i>
+                    </button>
+                  ))}
+                </div>
+              )}
               {project.img && (
                 <img
                   src={project.img}
@@ -125,6 +147,13 @@ const Projects = () => {
           );
         })}
       </div>
+
+      <Lightbox
+        images={viewer.images}
+        index={viewer.index}
+        onChange={(index) => setViewer((v) => ({ ...v, index }))}
+        onClose={() => setViewer((v) => ({ ...v, index: null }))}
+      />
     </section>
   );
 };
