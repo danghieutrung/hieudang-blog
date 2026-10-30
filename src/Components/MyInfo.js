@@ -73,7 +73,7 @@ const MyInfo = () => {
               competition.
             </p>
             <a
-              href="/cv/DangTrungHieu_CV.docx"
+              href="/cv/DangTrungHieu_CV.pdf"
               download
               target="_blank"
               className="button about__button"
