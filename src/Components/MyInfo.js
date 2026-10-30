@@ -2,9 +2,12 @@
 import React from "react";
 
 const highlights = [
-  { value: "100+", label: "staff trained in AI automation across all country offices" },
-  { value: "10 min", label: "to draft an EMMP proposal or monthly report with my LLM workflow" },
-  { value: "5TB+", label: "of survey data, 20+ years of it, being moved to one geospatial platform" },
+  { icon: "ri-leaf-line", value: "20+", label: "EIA and EMMP projects worked on" },
+  { icon: "ri-smartphone-line", value: "200+", label: "biodiversity surveys carried out with my field data app" },
+  { icon: "ri-database-2-line", value: "10,000+", label: "survey records collected through the app" },
+  { icon: "ri-map-2-line", value: "5TB+", label: "of survey data, 20+ years of it, being moved to one geospatial platform" },
+  { icon: "ri-team-line", value: "100+", label: "staff trained in AI automation across all country offices" },
+  { icon: "ri-timer-line", value: "10 min", label: "to draft an EMMP proposal or monthly report with my LLM workflow" },
 ];
 
 const skillGroups = [
@@ -88,6 +91,7 @@ const MyInfo = () => {
         <div className="highlights">
           {highlights.map((item) => (
             <div className="highlight" key={item.value}>
+              <i className={`${item.icon} highlight__icon`} aria-hidden="true"></i>
               <p className="highlight__value">{item.value}</p>
               <p className="highlight__label">{item.label}</p>
             </div>
